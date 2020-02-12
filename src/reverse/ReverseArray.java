@@ -3,6 +3,8 @@ package reverse;
 /*
    array length divided by 2 gives number of swaps required
    swap start index with last index, continue until number of swaps.
+
+   Time complexity: o(n), where n is array length divided by 2.
 */
 public class ReverseArray {
 
