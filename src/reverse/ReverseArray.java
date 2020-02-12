@@ -1,6 +1,7 @@
 package reverse;
 
-/* array length divided by 2 gives number of swaps required
+/*
+   array length divided by 2 gives number of swaps required
    swap start index with last index, continue until number of swaps.
 */
 public class ReverseArray {
@@ -11,12 +12,12 @@ public class ReverseArray {
 
         int number_of_swaps_required = (arr.length)/2;
 
-        for(int index_one = 0; index_one< number_of_swaps_required; index_one++) {
-            int index_two = arr.length -index_one -1;
+        for(int start_index = 0; start_index< number_of_swaps_required; start_index++) {
+            int last_index = arr.length -start_index -1;
 
-            int temp = arr[index_one];
-            arr[index_one] = arr[index_two];
-            arr[index_two] = temp;
+            int temp = arr[start_index];
+            arr[start_index] = arr[last_index];
+            arr[last_index] = temp;
         }
 
         for(int i : arr) {
