@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimeNumbers {
     public static void main(String[] args) {
 
         int n = 25;
 
-        naiveMethod(n);
-        // sieveOfEratosthenes();
+        // naiveMethod(n);
+        sieveOfEratosthenes(n);
     }
 
     static void naiveMethod(int n) {
@@ -19,6 +22,21 @@ public class PrimeNumbers {
             if(count == 1 ) {
                  System.out.println(i);
             }    
+        }
+    }
+
+    static void sieveOfEratosthenes(int n) {
+        List<Integer> list = new ArrayList<Integer>();
+
+        for(int i = 2; i<=n; i++) {
+            list.add(i);
+        }
+
+        int i = 2;
+        for(int j = 4; j<=n; j++) {
+            if(j%i == 0) {
+                //list.remove();
+            } 
         }
     }
 }
