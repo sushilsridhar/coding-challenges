@@ -9,7 +9,13 @@ import java.io.InputStreamReader;
     2. convert string to char array, use reverse Array logic
     3. use charAt method of String, iterate in reverse , append to string builder.
 
-    Time Complexity: ?? calculate
+    Time Complexity:
+
+    METHOD ONE: o(n), where n is length of string
+
+    METHOD TWO: o(n) or log n ? calculate?
+
+    METHOD THREE: o(n), where n is length of string
 */
 public class ReverseString {
     public static void main(String []args) {
@@ -44,14 +50,14 @@ public class ReverseString {
 
         StringBuilder builder = new StringBuilder();
 
-        for(int i= s.length() -1; i >= 0; i--) {
+        for(int i= s.length() -1; i >= 0; i--) {  // o(n)
             builder.append(s.charAt(i));
         }
-        return builder.toString();
+        return builder.toString(); // o(n)
     }
 
     private static String useReverseArrayLogic(String s) {
-        char[] chars = s.toCharArray();
+        char[] chars = s.toCharArray(); // o(n)
 
         int number_of_swaps_required = (chars.length)/2;
 
@@ -67,19 +73,19 @@ public class ReverseString {
             chars[last_index] = temp;
         }
 
-        return String.copyValueOf(chars);
+        return String.copyValueOf(chars); // o(n)
     }
 
     private static String useNewCharArray(String s) {
-        char[] chars = s.toCharArray();
+        char[] chars = s.toCharArray(); // o(n)
 
         char[] reverseChar = new char[chars.length];
         int j=0;
 
-        for(int i= chars.length -1; i >=0; i--,j++) {
+        for(int i= chars.length -1; i >=0; i--,j++) { // o(n)
             reverseChar[j] = chars[i];
         }
 
-        return String.copyValueOf(reverseChar);
+        return String.copyValueOf(reverseChar); // o(n)
     }
 }
