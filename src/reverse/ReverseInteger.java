@@ -4,7 +4,7 @@ package reverse;
     12345 divide by 10 gives 1234
     12345 mod 10 gives 5
 
-    Time Complexity: ? and 1%10 =1 how ?
+    Time Complexity: o(log n) --> where n is input number (12,345), iteration count reduces exponentially
 */
 
 public class ReverseInteger {

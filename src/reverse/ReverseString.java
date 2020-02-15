@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 
     METHOD ONE: o(n), where n is length of string
 
-    METHOD TWO: o(n) or log n ? calculate?
+    METHOD TWO: o(n), where n is lenth of string
 
     METHOD THREE: o(n), where n is length of string
 */
@@ -64,7 +64,7 @@ public class ReverseString {
         int last_index;
         char temp;
 
-        for(int start_index = 0; start_index < number_of_swaps_required; start_index++) {
+        for(int start_index = 0; start_index < number_of_swaps_required; start_index++) { // run n/2 times --> o(n)
 
             last_index = chars.length -start_index -1;
 
