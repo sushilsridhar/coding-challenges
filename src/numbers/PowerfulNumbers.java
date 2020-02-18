@@ -1,5 +1,10 @@
+package numbers;
+
 import java.util.ArrayList;
 
+/*
+    calculate Time complexity
+*/
 public class PowerfulNumbers {
     public static void main(String[] args) {
 

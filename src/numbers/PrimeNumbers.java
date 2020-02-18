@@ -1,5 +1,11 @@
+package numbers;
+
 import java.util.ArrayList;
 import java.util.List;
+
+/*
+    calculate Time complexity
+*/
 
 public class PrimeNumbers {
     public static void main(String[] args) {
