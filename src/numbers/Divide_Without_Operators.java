@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 
 /*
     Time complexity o(a), where a is dividend.
+
+    method two:  exp(log(a) – log(b)) = c
+    Math.floor(sign *  (Math.exp(Math.log(dividend) -  Math.log(divisor)))));
 */
 public class Divide_Without_Operators {
 
