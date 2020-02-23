@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 /*
     Time complexity o(a), where a is dividend.
 
+    For a/b, a = b * q + r
+
     method two:  exp(log(a) – log(b)) = c
     Math.floor(sign *  (Math.exp(Math.log(dividend) -  Math.log(divisor)))));
 */
