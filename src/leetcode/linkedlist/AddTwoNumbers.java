@@ -38,8 +38,12 @@ public class AddTwoNumbers {
 
             int val = sum%10;
 
-            p1 = (p1!=null ? p1.next : p1);
-            p2 = (p2!=null ? p2.next : p2);
+            if(p1!=null) {
+                p1 = p1.next;
+            }
+            if(p2!=null) {
+                p2 = p2.next;
+            }
 
 
             ListNode node = new ListNode(val);
@@ -51,13 +55,7 @@ public class AddTwoNumbers {
         }
 
         if(carry != 0) {
-            ListNode pointerTwo = head;
-
-            while(pointerTwo.next != null) {
-                pointerTwo = pointerTwo.next;
-            }
-
-            pointerTwo.next = new ListNode(carry);
+            pointer.next = new ListNode(carry);
         }
 
         return head.next;
