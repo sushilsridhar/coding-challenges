@@ -1,5 +1,9 @@
 package numbers;
 
+/*
+    Time Complexity: o(n), where n is number of fibonacci numbers needed
+ */
+
 public class Fibonacci_Numbers {
 
     public static void main(String args[]) {
@@ -14,7 +18,7 @@ public class Fibonacci_Numbers {
         System.out.println(i);
         System.out.println(j);
 
-        while(counter <= n - 2) { // --> o(n), where n is number of fibonacci numbers needed
+        while(counter <= n - 2) {
             f = i + j;
 
             System.out.println(f);

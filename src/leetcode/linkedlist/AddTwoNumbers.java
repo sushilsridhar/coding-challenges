@@ -1,8 +1,5 @@
 package leetcode.linkedlist;
 
-
-import java.util.List;
-
 public class AddTwoNumbers {
 
     static class ListNode {
