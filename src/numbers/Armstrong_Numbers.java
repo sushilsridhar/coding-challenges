@@ -1,5 +1,8 @@
 package numbers;
 
+/*
+    Time complexity: 0(n) , where n is the number of digits in the number
+ */
 public class Armstrong_Numbers {
 
     public static void main(String []args) {
@@ -26,7 +29,7 @@ public class Armstrong_Numbers {
 
             n = n/10;
 
-            results = results + pow(mod, count);
+            results = results + pow(mod, count); // can use Math.pow here
         }
 
         if(results == number) {
