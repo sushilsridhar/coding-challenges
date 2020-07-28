@@ -3,29 +3,33 @@ package practice;
 public class Third_Largest {
     public static void main(String[] args) {
 
-        int a[] = {5, 3, 4 ,1 ,2};
+        //int a[] = {5, 3, 4 ,1 ,2};
 
-        System.out.println(naiveApproach(a, 5));
+        int a[] = {10, 8, 17 ,7 ,3, 1, 9, 2, 4, 5, 6};
 
-        System.out.println(averageApproach(a, 5));
+        System.out.println(naiveApproach(a, 11));
 
-        System.out.println(bestApproach(a, 5));
+        System.out.println(averageApproach(a, 11));
+
+        System.out.println(bestApproach(a, 11));
     }
 
-    /* 0(n), where n is the lenght of the array */
+    /*
+        0(n), where n is the lenght of the array
+    */
     private static int bestApproach(int[] a, int l) {
 
         int largest = Integer.MIN_VALUE, second_largest = Integer.MIN_VALUE, third_largest = Integer.MIN_VALUE;
 
-        for(int i=0; i<l; i++) {
+        for(int i=0; i<a.length; i++) {
             if(a[i] > largest) {
                 third_largest = second_largest;
                 second_largest = largest;
                 largest = a[i];
             }
             else if(a[i] > second_largest) {
-                second_largest = largest;
-                largest = a[i];
+                third_largest = second_largest;
+                second_largest = a[i];
             }
             else if(a[i] > third_largest) {
                 third_largest = a[i];
@@ -36,7 +40,9 @@ public class Third_Largest {
     }
 
 
-    /*  0(n) + 0(n) + 0(n) => 3n => time complexity o(n), where n is the length of the array */
+    /*
+       0(n) + 0(n) + 0(n) => 3n => time complexity o(n), where n is the length of the array
+    */
     private static int averageApproach(int[] a, int l) {
 
         int largest = Integer.MIN_VALUE, second_largest = Integer.MIN_VALUE, third_largest = Integer.MIN_VALUE;
@@ -63,7 +69,9 @@ public class Third_Largest {
     }
 
 
-    /* o(n2), where n is length of array */
+    /*
+        o(n2), where n is length of array
+    */
     private static int naiveApproach(int[] a, int l) {
 
         for(int i=0; i<l; i++) {
