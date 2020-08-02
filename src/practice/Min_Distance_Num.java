@@ -9,13 +9,49 @@ public class Min_Distance_Num {
 
         int x = 3, y = 6;
 
-        System.out.println(minDist(a, a.length, x, y));
+        int b[] = { 3, 5, 4, 2, 6, 3, 0, 0, 5, 6, 8, 3 };
+
+
+        System.out.println(bruteForce(a, a.length, x, y));
+        System.out.println(bestSolution(b, b.length, x, y));
+    }
+
+
+    /*
+     *  o(n), where n is length of the array
+     */
+    private static int bestSolution(int[] a, int n, int x, int y) {
+
+        int i = 0, prev = 0, min_dist = Integer.MAX_VALUE;
+
+        for(; i<n; i++){
+
+            if(a[i] == x || a[i] == y) {
+                prev = i;
+                break;
+            }
+        }
+
+        for(; i<n; i++) {
+
+            if(a[i] == x || a[i] == y) {
+
+                if((a[i] != a[prev]) && (i-prev < min_dist)) {
+                    min_dist = i - prev;
+                    prev = i;
+                } else {
+                    prev = i;
+                }
+            }
+        }
+
+        return min_dist;
     }
 
     /*
     *   o(n2), where n is the length of the array
     */
-    private static int minDist(int[] a, int n, int x, int y) {
+    private static int bruteForce(int[] a, int n, int x, int y) {
 
         int minDist = -1;
 
