@@ -2,12 +2,14 @@ package practice;
 
 import java.util.ArrayList;
 
+/* left rotate array */
+
 public class Rotate_Array {
     public static void main(String[] args) {
 
-        int[] a = { 1, 2, 3, 4, 5, 6, 7, 8};
+        int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        int d = 2;
+        int d = 4; /* number of shifts */
 
         for(int i=0; i< a.length; i++) {
             System.out.print(a[i]+" ");
@@ -15,25 +17,42 @@ public class Rotate_Array {
 
         System.out.println("");
 
-        //bruteForce(a, d, a.length);
-
-        int[] result1 = bruteForceTwo(a, d, a.length);
+        /*int[] result1 = bruteForceTwo(a, d, a.length);
 
         for(int element: result1) {
             System.out.print(element+" ");
-        }
-
-        System.out.println("");
-
-        //int[] result2 = averageSolution(a, d, a.length);
-        /*for(int element: result2) {
-            System.out.print(element+" ");
         }*/
+
+        //System.out.println("");
+
+        int[] result2 = bestSolution(a, d, a.length);
+
+        for(int element: result2) {
+            System.out.print(element+" ");
+        }
 
     }
 
-    private static void averageSolution(int[] a, int d, int n) {
+    /*
+    *  o(n) + o(n/2) + o(n/2) => o(2n) => o(n)
+    */
+    private static int[] bestSolution(int[] a, int d, int n) {
 
+        reverse(a, 0, n -1);
+        reverse(a, 0, d -1);
+        reverse(a, d, n -1);
+
+        return a;
+    }
+
+    private static void reverse(int[] a, int startIndex, int endIndex) {
+
+        for(int i=startIndex; i<endIndex; i++, endIndex--) {
+
+            int temp = a[endIndex];
+            a[endIndex] = a[i];
+            a[i] = temp;
+        }
 
     }
 
