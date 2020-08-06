@@ -2,41 +2,44 @@ package practice;
 
 import java.util.ArrayList;
 
-/* left rotate array */
+/* rotate array - left and right rotation */
 
 public class Rotate_Array {
     public static void main(String[] args) {
 
         int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
+        int[] b = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
         int d = 4; /* number of shifts */
 
-        for(int i=0; i< a.length; i++) {
-            System.out.print(a[i]+" ");
-        }
+        printArray(a);
 
-        System.out.println("");
+        /* move elements from right to left side */
+        rightRotation(a, d, a.length);
+        printArray(a);
 
-        /*int[] result1 = bruteForceTwo(a, d, a.length);
+        /* move elements from left to right side */
+        leftRotation(b, d, a.length);
+        printArray(b);
+    }
 
-        for(int element: result1) {
-            System.out.print(element+" ");
-        }*/
+    /*
+     *  o(n) + o(n/2) + o(n/2) => o(2n) => o(n)
+     */
+    private static int[] leftRotation(int[] a, int d, int n) {
 
-        //System.out.println("");
+        reverse(a, 0, n -1);
+        reverse(a, 0, n-1-d);
+        reverse(a, n-d, n -1);
 
-        int[] result2 = bestSolution(a, d, a.length);
-
-        for(int element: result2) {
-            System.out.print(element+" ");
-        }
-
+        return a;
     }
 
     /*
     *  o(n) + o(n/2) + o(n/2) => o(2n) => o(n)
     */
-    private static int[] bestSolution(int[] a, int d, int n) {
+    private static int[] rightRotation(int[] a, int d, int n) {
 
         reverse(a, 0, n -1);
         reverse(a, 0, d -1);
@@ -56,6 +59,14 @@ public class Rotate_Array {
 
     }
 
+    private static void printArray(int[] a) {
+
+        System.out.println("");
+
+        for(int element: a) {
+            System.out.print(element+" ");
+        }
+    }
 
     /*
      *  o(n * d), where n is the length of the array, d is number of shifts
