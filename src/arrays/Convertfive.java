@@ -1,4 +1,4 @@
-package practice;
+package arrays;
 
 /*
     o(n), where n is number of digits in the number

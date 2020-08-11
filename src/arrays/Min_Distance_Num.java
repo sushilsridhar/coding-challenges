@@ -1,4 +1,4 @@
-package practice;
+package arrays;
 
 /* minimium distance between two numbers */
 

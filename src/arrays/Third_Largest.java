@@ -1,4 +1,4 @@
-package practice;
+package arrays;
 
 public class Third_Largest {
     public static void main(String[] args) {
