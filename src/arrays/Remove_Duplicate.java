@@ -1,6 +1,8 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Remove_Duplicate {
     public static void main(String[] args) {
@@ -10,11 +12,40 @@ public class Remove_Duplicate {
         //int arr[] = { 2, 1, 3, 3, 7, 5, 5, 5, 7, 9, 10};
 
 
-        int[] result = bruteForce(arr, arr.length);
+        //int[] result = bruteForce(arr, arr.length);
+
+        int[] result = Solution(arr, arr.length);
 
         for(int element: result) {
             System.out.print(element+" ");
         }
+    }
+
+
+    /*
+        works only for int arr[] = { 2, 2, 3, 3, 7, 5};
+
+        when duplicate elements are side by side
+     */
+    private static int[] Solution(int[] arr, int n) {
+
+        int pos = 0;
+
+        for(int i=0; i<arr.length -1; i++) {
+
+            if(arr[i] != arr[i+1]) {
+                arr[pos] = arr[i];
+                pos++;
+            }
+        }
+
+        arr[pos] = arr[arr.length-1];
+
+        int[] result = Arrays.copyOfRange(arr, 0, pos+1);
+
+        //int[] result = IntStream.range(0, pos+1).map(i -> arr[i]).toArray();
+
+        return result;
     }
 
     /*
