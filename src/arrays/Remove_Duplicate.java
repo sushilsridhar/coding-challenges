@@ -7,10 +7,9 @@ import java.util.stream.IntStream;
 public class Remove_Duplicate {
     public static void main(String[] args) {
 
-        int arr[] = { 2, 2, 3, 3, 7, 5};
+        //int arr[] = { 2, 2, 3, 3, 7, 5};
 
-        //int arr[] = { 2, 1, 3, 3, 7, 5, 5, 5, 7, 9, 10};
-
+        int arr[] = { 2, 1, 3, 3, 7, 5, 5, 5, 7, 9, 10};
 
         //int[] result = bruteForce(arr, arr.length);
 
@@ -25,9 +24,13 @@ public class Remove_Duplicate {
     /*
         works only for int arr[] = { 2, 2, 3, 3, 7, 5};
 
-        when duplicate elements are side by side
+        when duplicate elements are side by side,
+
+        arrays need to be sorted otherwise, before processing
      */
     private static int[] Solution(int[] arr, int n) {
+
+        Arrays.sort(arr);
 
         int pos = 0;
 
