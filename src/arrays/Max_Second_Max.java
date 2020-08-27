@@ -42,3 +42,9 @@ public class Max_Second_Max {
         return results;
     }
 }
+
+/*
+
+1. assign, min value to two variables, max and second max
+2. iterate the array to just mark and find max and second max
+ */

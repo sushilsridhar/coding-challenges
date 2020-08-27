@@ -77,3 +77,26 @@ public class Max_Sum_Configuration {
         return max_sum;
     }
 }
+
+/*
+
+{8, 3, 1, 2}
+
+the combination with max product value is
+
+0*3 + 1*1 + 2*2 + 3*8 = 29
+
+
+the max value in the array should be the last value in the array --> this combination is max configuration
+
+
+1. find the max value in the array, find it's index, that's the number of shifts required, 8 to come to last, we need to make
+   one left rotation.
+2. rotation
+   2.1 - reverse the whole array - 2 1 3 8
+   2.2 - reverse the array from 0 to size of array - 1 - number of shifts made - 3 1 2 8
+   2.3 - reverse the array from size of array - number of shifts - 3 1 2 8
+3. iterate and find the max sum configuration
+
+
+ */

@@ -48,3 +48,16 @@ public class Convertfive {
         System.out.println(convertFiveRecursion(1004));
     }
 }
+
+/*
+
+1004,
+
+(100) * 10 + 4
+
+(10)  * 10 + 0 (5)
+
+(1)   * 10 + 0 (5)
+
+(0)   * 10 + 1
+ */
