@@ -87,3 +87,10 @@ public class Third_Largest {
         return a[l-3];
     }
 }
+
+/*
+
+1. initialize three variables, largest, second largest, third largest
+2. iterate the array and mark the largest , second largest, third largest
+
+ */

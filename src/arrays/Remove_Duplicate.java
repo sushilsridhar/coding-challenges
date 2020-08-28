@@ -83,3 +83,14 @@ public class Remove_Duplicate {
         return result.stream().mapToInt(i -> i).toArray();
     }
 }
+
+
+/*
+
+1. sort the array
+2. compare the element of array with adjacent element
+3. if both are same, do nothing
+4. if both are different, add the element to arr[pos], and increment pos,
+5  add last element to the end of the array
+
+ */
