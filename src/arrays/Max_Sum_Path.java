@@ -61,3 +61,21 @@ public class Max_Sum_Path {
         return result;
     }
 }
+
+/*
+
+int arr1[] = { 2, 3, 7, 10, 12, 15, 30, 34};
+int arr2[] = { 1, 5, 7, 8, 10, 15, 16, 19};
+
+// max sum path --> 1,5,7,8,10,12,15,30,34 = 122
+
+1. arr1[i] < arr2[j], add to arr1[i] to sum1
+   arr1[j] < arr2[i], add to arr2[j] to sum2
+
+   arr1[i] == arr2[j] , find max of sum1 and sum2 , add to result,
+
+2. loop again
+
+3. add remaining elements to sum1 and sum2, find max, that's the result
+
+ */

@@ -11,6 +11,9 @@ public class Rotate_Array {
 
         int[] b = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
+        int[] c = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+
         int d = 4; /* number of shifts */
 
         printArray(a);
@@ -22,6 +25,9 @@ public class Rotate_Array {
         /* move elements from left to right side */
         leftRotation(b, d, a.length);
         printArray(b);
+
+
+
     }
 
     /*
@@ -108,7 +114,7 @@ public class Rotate_Array {
 
 /*
 
-right rotation
+left rotation
 
 5 6 7 8 9 10 1 2 3 4
 
@@ -117,7 +123,7 @@ right rotation
 3 - reverse the array from size of array - number of shifts - 5 6 7 8 9 10 1 2 3 4
 
 
-left rotation
+right rotation
 
 7 8 9 10 1 2 3 4 5 6
 
