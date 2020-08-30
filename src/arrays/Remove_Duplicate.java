@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
+/* Remove duplicates in small prime array */
+
 public class Remove_Duplicate {
     public static void main(String[] args) {
 
@@ -13,13 +15,30 @@ public class Remove_Duplicate {
 
         //int[] result = bruteForce(arr, arr.length);
 
-        int[] result = Solution(arr, arr.length);
+        //int[] result = Solution(arr, arr.length);
+
+        ArrayList<Integer> result = bestSolution(arr, arr.length);
 
         for(int element: result) {
             System.out.print(element+" ");
         }
     }
 
+    private static ArrayList<Integer> bestSolution(int arr[], int n)
+    {
+        int marker[] = new int[100];
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for(int i=0; i<n; i++)
+        {
+            if(marker[arr[i]]==0)
+            {
+                marker[arr[i]]=1;
+                list.add(arr[i]);
+            }
+        }
+        return list;
+    }
 
     /*
         works only for int arr[] = { 2, 2, 3, 3, 7, 5};
@@ -86,6 +105,7 @@ public class Remove_Duplicate {
 
 
 /*
+only works for Sorted , result will be sorted
 
 1. sort the array
 2. compare the element of array with adjacent element
@@ -93,4 +113,13 @@ public class Remove_Duplicate {
 4. if both are different, add the element to arr[pos], and increment pos,
 5  add last element to the end of the array
 
- */
+*/
+
+/* Best Solution
+*
+*   1. initialize int[] marker of 100
+*   2. marker[arr[i]] == 0 , mark that particular index of marker as 1
+*      if arr[i] repeats again, marker[arr[i]] will be 1, hence not added to arraylist
+*   3  and add to arraylist
+*
+* */
