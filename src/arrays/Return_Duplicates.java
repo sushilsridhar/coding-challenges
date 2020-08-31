@@ -1,0 +1,50 @@
+package arrays;
+
+import java.util.ArrayList;
+
+public class Return_Duplicates {
+
+    public static void main(String[] args) {
+
+        int a[] = {26 ,13, 9, 25, 1, 1, 0, 22, 13, 22, 20, 3, 8, 11, 25, 10, 3, 15, 11, 19, 20, 2, 4, 25, 14, 23, 14};
+
+        ArrayList<Integer> result = solution(a, a.length);
+
+        for(int r: result) {
+            System.out.print(r+" ");
+        }
+    }
+
+
+    /* time complexity: o(n), where n is length of the array
+     *
+     *  space complexity: o(n)
+     */
+    private static ArrayList<Integer> solution(int arr[], int n) {
+
+        int[] marker = new int[n];
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for(int i=0; i<n; i++) {
+            if(marker[arr[i]] == 0) {
+                marker[arr[i]] = 1;
+            } else if(marker[arr[i]] == 1) {
+                list.add(arr[i]);
+                marker[arr[i]] = 2;
+            }
+        }
+
+        if(list.size() == 0) {
+            list.add(-1);
+        }
+
+        return list;
+    }
+}
+
+/*
+    1. mark all elements as 1
+    2. if equal to 1, then it is duplicate, add to list and mark it as 2, so that another occurrence is not added
+
+ */
