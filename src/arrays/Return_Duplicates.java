@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Return_Duplicates {
 
@@ -38,6 +39,8 @@ public class Return_Duplicates {
         if(list.size() == 0) {
             list.add(-1);
         }
+
+        Collections.sort(list); // --> not required
 
         return list;
     }
