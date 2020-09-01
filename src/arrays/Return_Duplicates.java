@@ -7,7 +7,7 @@ public class Return_Duplicates {
 
     public static void main(String[] args) {
 
-        //int a[] = {26 ,13, 9, 25, 1, 1, 0, 22, 13, 22, 20, 3, 8, 11, 25, 10, 3, 15, 11, 19, 20, 2, 4, 25, 14, 23, 14};
+        int a[] = {26 ,13, 9, 25, 1, 1, 0, 22, 13, 22, 20, 3, 8, 11, 25, 10, 3, 15, 11, 19, 20, 2, 4, 25, 14, 23, 14};
 
 
         ArrayList<Integer> result = solution(a, a.length);
