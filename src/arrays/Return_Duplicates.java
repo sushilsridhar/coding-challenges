@@ -94,4 +94,4 @@ public class Return_Duplicates {
 
  arr[2] / 7 > 1, the element in the index 2 is duplicate
 
- */
+*/
