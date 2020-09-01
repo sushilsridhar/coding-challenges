@@ -13,7 +13,7 @@ public class Return_Duplicates {
         ArrayList<Integer> result = solution(a, a.length);
 
 
-        //int a[] = { 2, 3, 1, 2, 3, 7, 7};
+        //int a[] = { 2, 3, 1, 2, 3, 6, 6};
         //ArrayList<Integer> result = duplicates(a, a.length);
 
         for(int r: result) {
@@ -21,20 +21,20 @@ public class Return_Duplicates {
         }
     }
 
-    /* not working properly - check */
+    /*
+        Constraints:
+        1 <= N <= 10^5
+        0 <= A[i] <= N-1, for each valid i
+
+        efficient in terms of space complexity
+    */
     public static ArrayList<Integer> duplicates(int arr[], int n) {
-        // First check all the values that are
-        // present in an array then go to that
-        // values as indexes and increment by
-        // the size of array
+
         for (int i = 0; i < n; i++) {
             int index = arr[i] % n;
             arr[index] += n;
         }
 
-        // Now check which value exists more
-        // than once by dividing with the size
-        // of array
         int flag = 0;
         ArrayList<Integer> ans = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
@@ -80,5 +80,18 @@ public class Return_Duplicates {
 /*
     1. mark all elements as 1
     2. if equal to 1, then it is duplicate, add to list and mark it as 2, so that another occurrence is not added
+
+ */
+
+/*
+ duplicates - method
+
+ arr[i] % n => 2%7 --> gives 2
+
+ arr[2] = arr[2] + 7,
+
+ if again 2 occurs in the array, one more 7 will be added to arr[2]
+
+ arr[2] / 7 > 1, the element in the index 2 is duplicate
 
  */
