@@ -6,6 +6,7 @@ package arrays;
 
     Input: nums = [0,1,0,3,12]
     Output: [1,3,12,0,0]
+
  */
 public class Move_Zeros {
 
@@ -13,8 +14,48 @@ public class Move_Zeros {
 
         int[] nums = {0,1,0,3,12};
 
-        moveZeroes(nums);
+        //moveZeroes(nums);
+        //moveZeroesEfficient(nums);
 
+        moveZeroesMostEfficient(nums);
+
+    }
+
+    // time: O(n) - optimal than other solutions, space: O(1)
+    public static void moveZeroesMostEfficient(int nums[]) {
+        int lastNonZeroFoundAt = 0;
+
+        for(int i=0; i<nums.length; i++) {
+            if(nums[i] != 0) {
+                int temp = nums[lastNonZeroFoundAt];
+                nums[lastNonZeroFoundAt] = nums[i];
+                nums[i] = temp;
+
+                lastNonZeroFoundAt++;
+            }
+        }
+    }
+
+    // time: O(n), space: O(1)
+    // for [0, 0, 0, ..., 0, 1], second for loop running n-1 times, not optimal
+    public static void moveZeroesEfficient(int nums[]) {
+
+        int lastNonZeroFoundAt = 0;
+
+        for(int i=0; i<nums.length; i++) {
+            if(nums[i] != 0) {
+                nums[lastNonZeroFoundAt++] = nums[i];
+            }
+        }
+
+        for(int i=lastNonZeroFoundAt; i<nums.length; i++) {
+            nums[i] = 0;
+        }
+
+        // not part of solution
+        for(int i=0; i<nums.length;i++) {
+            System.out.println(nums[i]);
+        }
     }
 
     // brute force, time: O(n), space: O(n)
@@ -38,6 +79,11 @@ public class Move_Zeros {
             newArray[i] = 0;
         }
 
+        for(int i=0; i<nums.length;i++) {
+            nums[i] = newArray[i];
+        }
+
+        // not part of solution
         for(int i=0; i<nums.length;i++) {
             System.out.println(newArray[i]);
         }
