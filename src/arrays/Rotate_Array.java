@@ -2,8 +2,25 @@ package arrays;
 
 import java.util.ArrayList;
 
-/* rotate array - left and right rotation */
+/* rotate array - left and right rotation
 
+left rotation
+
+5 6 7 8 9 10 1 2 3 4
+
+1 - reverse the whole array - 10 9 8 7 6 5 4 3 2 1
+2 - reverse the array from 0 to size of array - 1 - number of shifts made - 5 6 7 8 9 10 4 3 2 1
+3 - reverse the array from size of array - number of shifts - 5 6 7 8 9 10 1 2 3 4
+
+
+right rotation
+
+7 8 9 10 1 2 3 4 5 6
+
+1 - reverse the whole array - 10 9 8 7 6 5 4 3 2 1
+2 - reverse the array from 0 to  number of shifts - 1, 7 8 9 10 6 5 4 3 2 1
+3 - reverse the array from number of shifts to array length -1 , 7 8 9 10 1 2 3 4 5 6
+*/
 public class Rotate_Array {
     public static void main(String[] args) {
 
@@ -111,26 +128,5 @@ public class Rotate_Array {
 
     }
 }
-
-/*
-
-left rotation
-
-5 6 7 8 9 10 1 2 3 4
-
-1 - reverse the whole array - 10 9 8 7 6 5 4 3 2 1
-2 - reverse the array from 0 to size of array - 1 - number of shifts made - 5 6 7 8 9 10 4 3 2 1
-3 - reverse the array from size of array - number of shifts - 5 6 7 8 9 10 1 2 3 4
-
-
-right rotation
-
-7 8 9 10 1 2 3 4 5 6
-
-
-1 - reverse the whole array - 10 9 8 7 6 5 4 3 2 1
-2 - reverse the array from 0 to  number of shifts - 1, 7 8 9 10 6 5 4 3 2 1
-3 - reverse the array from number of shifts to array length -1 , 7 8 9 10 1 2 3 4 5 6
-*/
 
 
