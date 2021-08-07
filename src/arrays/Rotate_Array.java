@@ -33,18 +33,60 @@ public class Rotate_Array {
 
         int d = 4; /* number of shifts */
 
-        printArray(a);
+        //printArray(a);
 
         /* move elements from right to left side */
-        rightRotation(a, d, a.length);
-        printArray(a);
+        //rightRotation(a, d, a.length);
+        //printArray(a);
 
         /* move elements from left to right side */
-        leftRotation(b, d, a.length);
-        printArray(b);
+        //leftRotation(b, d, a.length);
+        //printArray(b);
 
+        int[] brute = { 1, 2, 3, 4, 5};
+        int bruteK = 4;
 
+        bruteForceRightRotation(brute, bruteK);
+        printArray(brute);
 
+        int [] n = { 1, 2, 3};
+        int k = 4;
+        rightRotationEfficicent(n, k);
+        printArray(n);
+    }
+
+    private static void bruteForceRightRotation(int[] brute, int bruteK) {
+
+        bruteK = bruteK % brute.length; // this is must, eg, n = { 1, 2, 3}; 4 shifts to this array is same as 1 shift
+
+        for(int i=0; i<bruteK; i++) {
+            int prev = brute[brute.length-1];
+            for(int j=0; j<brute.length; j++) {
+                int temp = brute[j];
+                brute[j] = prev;
+                prev = temp;
+            }
+        }
+    }
+
+    public static void rightRotationEfficicent(int[] nums, int k) {
+
+        k = k%nums.length; // this is must, n = { 1, 2, 3}; 4shifts to this array is same as 1 shift
+
+        reverseEfficient(nums, 0, nums.length-1);
+        reverseEfficient(nums, 0, k-1);
+        reverseEfficient(nums, k, nums.length-1);
+    }
+
+    static void reverseEfficient(int[]a, int startIndex, int endIndex) {
+
+        for(int i=startIndex; i<endIndex; i++) {
+
+            int temp = a[endIndex];
+            a[endIndex] = a[i];
+            a[i] = temp;
+            endIndex--;
+        }
     }
 
     /*
