@@ -17,5 +17,6 @@ public class UniqueElement {
             result =  result ^ A[i];
         }
         return result;
+
     }
 }
