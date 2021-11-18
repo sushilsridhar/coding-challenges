@@ -2,6 +2,8 @@ package bitmanipulation;
 
 /*
     Given an array of integers A, every element appears twice except for one. Find that single one.
+
+    a ^ c ^ d ^ c ^ a ^ e ^ d = e
  */
 public class UniqueElement {
     public static void main(String[] args) {

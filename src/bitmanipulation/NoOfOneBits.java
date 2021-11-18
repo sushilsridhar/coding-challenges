@@ -10,6 +10,43 @@ public class NoOfOneBits {
     public static void main(String[] args) {
 
         System.out.println(numSetBits(450676354));
+
+        System.out.println(numSetBits(24));
+
+        System.out.println(Optimized(24));
+
+        System.out.println(MoreOptimized(24)); // log n is better
+
+    }
+
+    // number of iterations if log n, where n = n/2
+    private static int MoreOptimized(int n) {
+
+        int count = 0;
+        while(n>0) {
+            if((n&1) == 1)
+                count++;
+
+            n = n>>1; // this is n = n/2, 16 8 4 2 1 -> binary place
+        }
+        return count;
+    }
+
+    // runs for 32 iterations
+    private static int Optimized(int n) {
+
+        int count = 0;
+        for(int i=0; i<32; i++) {
+            if(checkIthBitSetOrNot(n, i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static boolean checkIthBitSetOrNot(int n, int i) {
+
+        return ((n >> i) & 1) == 1;
     }
 
     public static int numSetBits(int A) {
