@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 public class Merge_Two_Sorted_Array {
 

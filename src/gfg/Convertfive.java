@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 /*
     o(n), where n is number of digits in the number

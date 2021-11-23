@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 /* minimium distance between two numbers */
 

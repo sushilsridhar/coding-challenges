@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 public class Third_Largest {
     public static void main(String[] args) {

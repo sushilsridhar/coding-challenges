@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 public class Convert_To_Wave {
     public static void main(String[] args) {

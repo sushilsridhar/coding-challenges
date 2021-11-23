@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 public class Max_Sum_Configuration {
 

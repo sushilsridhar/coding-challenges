@@ -1,4 +1,4 @@
-package arrays;
+package gfg;
 
 /*
     Time complexity, o(m+n), where m is length of arr1 and n is length of arr2
