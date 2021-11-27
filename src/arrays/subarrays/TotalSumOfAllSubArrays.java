@@ -1,5 +1,20 @@
 package arrays.subarrays;
 
+/*
+    technique: adding contribution of each and every element
+
+    arr[] = { a0, a1, a2, a3, a4, a5, a i... a n-1}
+
+    in how many subarrays a i is present,
+    left side - [0 to i], i-0+1 -> i+1
+    right side - [i to N-1], N-1-i+1 -> N-i
+
+    left side * right side -> gives total numbers of subarrays in which a i is present
+
+    a[i] * leftside * rightside -> gives the total count of a[i] in all subarrays,
+    in the subarrays together, a[i] is occuring leftside * rightside times
+
+ */
 public class TotalSumOfAllSubArrays {
 
     public static void main(String[] args) {

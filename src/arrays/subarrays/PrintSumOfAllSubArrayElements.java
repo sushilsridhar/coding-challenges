@@ -5,17 +5,19 @@ package arrays.subarrays;
     [2,5] is x
     [2,6] is x + arr[6]
 
-    Carry forward technique
+    Carry forward technique - carring the previous subarray sum to new subarray
+
+    Number of subarrays in array of length N, is N(N+1)/2 -> sum of all natural numbers
  */
-public class SumOfAllSubArrayElements {
+public class PrintSumOfAllSubArrayElements {
 
     public static void main(String[] args) {
 
         int a[] = { 3, -2, 6, 4, 2};
 
-        bruteForce(a); //O(n^2)
+        bruteForce(a); //O(n^3)
         System.out.println("----");
-        efficient(a);
+        efficient(a); // O(n^2)
     }
 
     private static void efficient(int[] a) {

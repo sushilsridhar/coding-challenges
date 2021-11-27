@@ -28,7 +28,7 @@ public class SubarrayWithMaxSum {
 
         int sum = 0;
 
-        for(int i=0; i<N-k; i++) {
+        for(int i=0; i<N-k; i++) { // i<k-1
             sum = sum + a[i];
         }
 
