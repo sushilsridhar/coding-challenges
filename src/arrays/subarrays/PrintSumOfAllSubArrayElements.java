@@ -1,11 +1,11 @@
 package arrays.subarrays;
 
 /*
+    technique: Carry forward technique - carring the previous subarray sum to new subarray
+
     Given sum of all elements from
     [2,5] is x
     [2,6] is x + arr[6]
-
-    Carry forward technique - carring the previous subarray sum to new subarray
 
     Number of subarrays in array of length N, is N(N+1)/2 -> sum of all natural numbers
  */

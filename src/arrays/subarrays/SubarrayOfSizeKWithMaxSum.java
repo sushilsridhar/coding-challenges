@@ -1,6 +1,8 @@
 package arrays.subarrays;
 
 /*
+    technique: Carry forward technique, Sliding window
+
     Given sum of all elements from
     [2,5] is x
     [2,6] is x + arr[6]
@@ -11,7 +13,7 @@ package arrays.subarrays;
 
     Sliding window for efficient solution
  */
-public class SubarrayWithMaxSum {
+public class SubarrayOfSizeKWithMaxSum {
     public static void main(String[] args) {
                 //   0  1   2  3  4   5  6  7   8  9
         int a[] = { -3, 4, -2, 5, 3, -2, 8, 2, -1, 4};
@@ -28,13 +30,13 @@ public class SubarrayWithMaxSum {
 
         int sum = 0;
 
-        for(int i=0; i<N-k; i++) { // i<k-1
+        for(int i=0; i<k; i++) { // i<k
             sum = sum + a[i];
         }
 
         int maxSum = sum;
 
-        for(int i=1,j; i<N-k; i++) {
+        for(int i=1,j; i<=N-k; i++) {
             j = k-1 + i;
             sum = sum - a[i-1] + a[j];
             maxSum = Math.max(maxSum, sum);
@@ -51,7 +53,7 @@ public class SubarrayWithMaxSum {
 
         int maxSum = Integer.MIN_VALUE;
 
-        for(int i=0; i<N-k; i++) {
+        for(int i=0; i<=N-k; i++) {
             int j = k-1 + i;
             int sum =0;
             for(int x=i; x<=j; x++) {

@@ -20,7 +20,7 @@ public class PrintStartAndEndIndexOfAllSubarrays {
         int N = a.length;
         int k = 6;
 
-        for(int i=0; i<N-k; i++) {
+        for(int i=0; i<=N-k; i++) {
             int j = k-1 + i;
             System.out.println(i+" "+j);
         }
