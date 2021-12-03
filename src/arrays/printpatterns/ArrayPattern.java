@@ -1,4 +1,4 @@
-package arrays.numbers;
+package arrays.printpatterns;
 
 /*
     1 0 0 0

@@ -2,6 +2,16 @@ package arrays.subarrays;
 
 /*
     technique: adding contribution of each and every element
+                0   1  2   3  4  5
+    int a[] = { 3, -2, 4, -1, 2, 6};
+
+    in how many subarrays index 3 element is present,
+
+    left side   right side  --> all combination, leftside * rightside, 4*3= 12
+        0           3
+        1           4
+        2           5
+        3
 
     arr[] = { a0, a1, a2, a3, a4, a5, a i... a n-1}
 
@@ -21,7 +31,7 @@ public class TotalSumOfAllSubArrays {
 
         int a[] = { 3, -2, 4, -1, 2, 6};
 
-        bruteforce(a); // O(n^2)
+        bruteforce(a); // O(n^3)
         efficient(a);  // O(n)
 
     }
