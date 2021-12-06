@@ -8,6 +8,8 @@ package arrays.queries;
        pf[1] - sum of all elements from 0-1
        pf[7] - sum of all elements from 0-7
 
+       pfArray[i] = pfArray[i-1] + arr[i];
+
     2.  sum = pfArray[right] - pfArray[left] + arr[left];
 
     eg query 1-3,  pfArray[3] - pfArray[1] + arr[1];

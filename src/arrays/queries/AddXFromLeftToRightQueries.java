@@ -18,6 +18,7 @@ package arrays.queries;
 
      step2: calculate prefix array for the new array
 
+            pf[i] = pf[i-1] + a[i];
  */
 public class AddXFromLeftToRightQueries {
     public static void main(String[] args) {
@@ -30,6 +31,56 @@ public class AddXFromLeftToRightQueries {
            5-8  1
            6-9  -3
          */
+
+        int N = 5;
+        int[][]D = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};
+        // ans Return: [10, 55, 45, 25, 25]
+
+        exampleBruteForce(N, D);
+
+        exampleBestSolution(N, D);
+
+    }
+
+    private static int[] exampleBestSolution(int A, int[][] B) {
+        int[] a = new int[A];
+        int[] pf = new int[A];
+
+        for(int i=0; i<B.length; i++) {
+            int startIndex = B[i][0]-1;
+            int endIndex = B[i][1]-1;
+            int amountGiven = B[i][2];
+
+            a[startIndex] += amountGiven;
+            if((endIndex+1) <= a.length-1) {
+                a[endIndex+1] -= amountGiven;
+            }
+        }
+
+        pf[0] = a[0];
+        for(int i=1; i<a.length; i++) {
+            pf[i] = pf[i-1] + a[i];
+        }
+
+        return pf;
+    }
+
+    private static int[] exampleBruteForce(int A, int[][] B) {
+
+        int[] a = new int[A];
+
+        for(int i=0; i<B.length; i++) {
+            int startIndex = B[i][0];
+            int endIndex = B[i][1];
+            int amountGiven = B[i][2];
+
+            for(int j=startIndex-1; j<=endIndex-1; j++) {
+                a[j] = a[j] + amountGiven;
+            }
+        }
+
+        return a;
+
     }
 
     // time complexity: O(n+q), q - number of queries, n - calculate prefix array
