@@ -12,6 +12,10 @@ package arrays.numbers;
 
     3 is an equilibrium index, because:
     A[0] + A[1] + A[2] = A[4] + A[5] + A[6]
+
+    if i is the equilibrium index,
+    leftsum --> range,  [0 ,i-1]
+    rightsum --> range, [i+1, n-1]
  */
 public class EquilibriumIndexOfArray {
     public static void main(String[] args) {
