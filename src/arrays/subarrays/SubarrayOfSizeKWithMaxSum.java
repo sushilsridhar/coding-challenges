@@ -12,6 +12,9 @@ package arrays.subarrays;
     Given an array, find max sum of all subarrays of length k
 
     Sliding window for efficient solution
+
+    solution steps:
+    1. calculate the initial sum upto k, so that we can slide from next index value using the initial sum
  */
 public class SubarrayOfSizeKWithMaxSum {
     public static void main(String[] args) {

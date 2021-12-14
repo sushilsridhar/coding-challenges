@@ -12,7 +12,7 @@ package arrays.subarrays;
 
    ex, [1,2,3,4,5], k=3, last subarray index is [N-k, N-1], N-k -> 5-3=2
  */
-public class PrintStartAndEndIndexOfAllSubarrays {
+public class PrintStartAndEndIndexOfAllSubarraysOfLengthK {
     public static void main(String[] args) {
                 //  0  1  2   3  4  5  6  7  8  9  10  11
         int a[] = { 3, 4, 2, -1, 6, 7, 8, 9, 3, 2, -1, 4};
