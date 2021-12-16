@@ -9,7 +9,7 @@ package matrix;
     1) i is increasing, j is decreasing
     2) i+j = N-1
  */
-public class PrintDiagonals {
+public class PrintDiagonalsOfSquareMatrix {
 
     public static void main(String[] args) {
 
