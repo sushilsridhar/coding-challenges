@@ -43,7 +43,7 @@ public class RotateSquareMatrix90Degree {
             }
         }
 
-        // swap each row
+        // reverse each row
         for(int i=0; i<a.length; i++) {
             int[] arr = a[i];
             int start=0, end = a[i].length-1;
