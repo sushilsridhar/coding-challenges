@@ -1,4 +1,4 @@
-package numbers;
+package maths;
 
 /*
     Modular Arithmetic,
@@ -22,6 +22,13 @@ package numbers;
     ((3*10^6)%p + (8*10^5)%p+ ...)%p -> ((3%p * 10^6%p)%p + (8%p * 10^5%p )%p+ ...)%p
 
     Ascii value of '0' is 48, use -48, or -any number to convert char to int
+
+    x =  10^5%p, to get 10^6%p ->
+    (10^5 * 10)%p
+    (10^5%p *10%p)%p
+    (x * 10%p)%p
+
+    (a * b)%p = (a%p * b)%p = (a * b%p)%p = (a%p * b%p)%p
 
  */
 public class CalculateModulus {
