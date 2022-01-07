@@ -1,6 +1,18 @@
 package gfg;
 
 /*
+    You are given an integer N. You need to convert all zeroes of N to 5.
+
+    1004,
+
+    (100) * 10 + 4
+
+    (10)  * 10 + 0 (5)
+
+    (1)   * 10 + 0 (5)
+
+    (0)   * 10 + 1
+
     o(n), where n is number of digits in the number
  */
 public class Convertfive {
@@ -48,16 +60,3 @@ public class Convertfive {
         System.out.println(convertFiveRecursion(1004));
     }
 }
-
-/*
-
-1004,
-
-(100) * 10 + 4
-
-(10)  * 10 + 0 (5)
-
-(1)   * 10 + 0 (5)
-
-(0)   * 10 + 1
- */
