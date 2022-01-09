@@ -1,5 +1,24 @@
 package bitmanipulation;
 
+/*
+    Given two integers A and B, find a number X such that A xor X is minimum possible, and the number of set bits in X equals B.
+
+    A = 3
+    B = 3
+
+    3 xor 7 = 4 which is minimum
+
+    A =  0 1 1 0 1 1
+    X =  0 1 1 0 1 1
+   xor=  0 0 0 0 0 0 -> this is the minimum, but set bits in X have to match B
+
+    B = 2
+    A =  0 1 1 0 1 1
+    X =  0 1 1 0 0 0 - unset first two bits, so that xor is minimum
+   xor=  0 0 0 0 1 1
+
+   initialize X as A, count number of set bits in X, based on B, set or unset the bits of X
+ */
 public class SmallestXor {
 
     public static void main(String[] args ) {

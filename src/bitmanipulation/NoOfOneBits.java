@@ -19,7 +19,7 @@ public class NoOfOneBits {
 
     }
 
-    // number of iterations if log n, where n = n/2
+    // number of iterations is log n, where n = n/2
     private static int MoreOptimized(int n) {
 
         int count = 0;

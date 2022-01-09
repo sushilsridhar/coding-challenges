@@ -6,7 +6,12 @@ package bitmanipulation;
 
     step 1: find all elements XOR
     step 2: In the XOR results, find the first set bit (which is the bit set as 1)
-    step 3: split the array elements based pos which is set (refer intro to bits 2, scaler notes)
+    bit 4 3 2 1 0
+    a   0 1 0 1 1
+    b   1 0 0 0 1
+    xor 1 1 0 1 0 - bit number 1 is 1 after xor, that means, a and b are have different bits at position 1
+
+    step 3: split the array elements based on pos which is set (refer intro to bits 2, scaler notes)
  */
 public class TwoUniqueElements {
 
