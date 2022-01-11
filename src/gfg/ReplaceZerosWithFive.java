@@ -15,7 +15,7 @@ package gfg;
 
     o(n), where n is number of digits in the number
  */
-public class Convertfive {
+public class ReplaceZerosWithFive {
 
     static int convertfive(int num) {
         int result = 0, count = 1, mod = 0;

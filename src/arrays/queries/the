@@ -1,0 +1,84 @@
+// write your code here...
+you have been given string, you have longest substring without repeting characters
+lowercase charaters
+str = "abcdbcae"
+ans = dcbae (5)
+
+str = "pwwkew"
+ans = 3 (wke)
+
+abacd
+4
+finding substring ->  sliding window approach
+start end
+
+abcd
+map ->
+start=0 end =0
+
+a-> true
+b-> true
+
+
+baacd
+01234
+start=0 end =0
+b->0
+end=1
+a->1
+end=2
+START=0 END =2
+maxlen=2
+start=2
+a->2
+
+0 - 1 (2)
+
+start =2
+end=2
+
+end=3
+map -> c-3
+end=4
+map d->4
+
+
+"abcdbcae"
+
+[]26 -> o(26) ~ 0(1) space complexity
+o(n)
+
+
+maxlen =  Integer.MIN_VALUE;
+s= = 0, e = 4
+a-> 0 - maxlen - 1
+b-> 1 - maxlen - 2
+c-> 2 - maxlen - 3
+d-> 3 - maxlen - 4
+
+b-> 4  - maxlen - 4
+s = 2 , e = 4
+c-> 5 ,   - maxlen - 4
+s = 3, e = 6
+a ->6, maxlen - 4
+s=3, e = 7
+e->7, maxlen - 5
+for ( end++) {
+    if(!map.containsKey(str[end]) || map.get(str[end]) >= start) {
+        map.put(str[end], end);
+        maxlen = Math.max(end-start+1, maxlen);
+    } else {
+        int previndex = map.get(str[end]);
+        maxlen = Math.max(end-start, maxlen);
+        start = previndex+1;
+        map.put(str[end], end);
+
+    }
+
+}
+return maxlen;
+
+
+
+
+//not able to hear you
