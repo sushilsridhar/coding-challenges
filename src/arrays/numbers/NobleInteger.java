@@ -21,8 +21,34 @@ public class NobleInteger {
         System.out.println(solve(B));
 
         System.out.println(efficient(B));
+
+        System.out.println(simpleSolution(B));
     }
 
+    // Time complexity  - nlogn + n
+    private static int simpleSolution(int[] A) {
+        int n = A.length;
+        int count = 0;
+
+        Arrays.sort(A);
+
+        if(A[n-1] == 0) {
+            return 1;
+        }
+
+        for(int i=n-2; i>=0; i--) {
+
+            if(A[i] != A[i+1]) {
+                count = n-1-i;
+            }
+            if(count == A[i]) {
+                return 1;
+            }
+        }
+        return -1;
+    }
+
+    // Time complexity  - nlogn + n
     public static int efficient(int[] A) {
 
         Arrays.sort(A);
