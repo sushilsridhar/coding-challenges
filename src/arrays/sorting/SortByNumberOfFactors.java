@@ -26,8 +26,13 @@ import java.util.Objects;
         1. positive when a is bigger,
         2. negative when a is smaller,
         3. zero when a and b are same
+
+    Always think about a,
+    if a is greater return 1, the sort function will place a at the last and b at the first (increasing order)
+    if a is smaller return -1, the sort function will place a at the first and b at the last (increasing order)
+    if a and b are same return 0, the sort function will take care of what to do
  */
-public class CustomComparator {
+public class SortByNumberOfFactors {
 
     public static void main(String[] args) {
 
