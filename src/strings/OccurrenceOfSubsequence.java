@@ -8,7 +8,7 @@ package strings;
      A = "ABCGAG" , answer 3 times
 
  */
-public class Occurrence_of_subsequence {
+public class OccurrenceOfSubsequence {
     public static void main(String[] args) {
 
         String A = "ABCGAG";
