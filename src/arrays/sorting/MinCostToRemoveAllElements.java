@@ -1,7 +1,6 @@
 package arrays.sorting;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /*
     Given N array element, at every step remove an array element.
