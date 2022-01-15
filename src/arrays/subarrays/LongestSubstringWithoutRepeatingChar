@@ -77,8 +77,3 @@ for ( end++) {
 
 }
 return maxlen;
-
-
-
-
-//not able to hear you
