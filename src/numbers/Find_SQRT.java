@@ -55,7 +55,7 @@ public class Find_SQRT {
             return 1;
         }
 
-        long left = 2, right = x;
+        long left = 2, right = x/2;
         long ans = 0;
 
         while(left<=right) {
