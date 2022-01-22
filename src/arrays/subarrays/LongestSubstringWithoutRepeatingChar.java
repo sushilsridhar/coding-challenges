@@ -2,7 +2,7 @@ package arrays.subarrays;
 
 import java.util.HashMap;
 
-/*
+/*  mentor
     Technique: Dynamic sliding window
 
     Given a string, return the length of the longest substring without repeating characters, all are lowercase charaters

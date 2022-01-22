@@ -31,6 +31,18 @@ package numbers;
     2*2 is not 5, so increment start, start = 3, save answer as mid, answer = 2
 
     so 2 is the floored square root of 5
+
+    overflow in binary search:
+    Here is an example, suppose you had a very big array of size 2,000,000,000 and 10 (10^9 + 10) and the left index was at 2,000,000,000 and
+    the right index was at 2,000,000,000 + 1.
+
+    By using lo + hi will sum upto 2,000,000,000 + 2,000,000,001 = 4,000,000,001. Since the max value of an integer is 2,147,483,647.
+    So you won't get 4,000,000,000 + 1, you will get an integer overflow.
+
+    But low + ((high - low) / 2) will work. 2,000,000,000 + ((2,000,000,001 - 2,000,000,000) / 2) =  2,000,000,000
+
+    low + high/2 - low/2 -> (2low-low)/2 + high/2 -> low/2 + high/2 -> (low+high)/2
+
  */
 public class Find_SQRT {
     public static void main(String[] args) {
@@ -59,7 +71,7 @@ public class Find_SQRT {
         long ans = 0;
 
         while(left<=right) {
-            long center = (left+right)/2;
+            long center = (left+right)/2; // center = left +(right-left)/2
 
             long square = center*center;
 
