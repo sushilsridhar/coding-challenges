@@ -1,5 +1,8 @@
 package linkedlist;
 
+/*
+     Implementation of linked List
+ */
 public class ImplementLinkedList {
         static class Node {
                 int data;
