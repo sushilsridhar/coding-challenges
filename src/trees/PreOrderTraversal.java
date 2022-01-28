@@ -1,9 +1,7 @@
-package tree;
+package trees;
 
 /*
-    Given a binary tree, find its height
-
-    height is length of the largest path from root to leaf node
+    Traverse the tree in pre order
 
     tree:
                     1
@@ -12,18 +10,9 @@ package tree;
                              7         8
                                 9
 
-    output: 5
-
-    example:         1
-                2         3
-            4
-
-     h1 - height of left sub tree
-     h2 - height of right sub tree
-
-     r = max(h1, h2) + 1, plus one is for root element
+    output: 1 2 3 4 5 6 7 9 8
  */
-public class HeightOfBinaryTree {
+public class PreOrderTraversal {
 
     static class TreeNode {
         int data;
@@ -36,19 +25,20 @@ public class HeightOfBinaryTree {
     }
 
     public static void main(String[] args) {
+
         TreeNode root = setup();
 
-        System.out.println(height(root));
+        preorder(root);
     }
 
-    private static int height(TreeNode root) {
-            if(root == null) {
-                return 0;
-            }
+    private static void preorder(TreeNode root) {
 
-            int left = height(root.left);
-            int right = height(root.right);
-            return Math.max(left, right) + 1;
+        if(root == null) {
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
     }
 
     public static TreeNode setup() {
