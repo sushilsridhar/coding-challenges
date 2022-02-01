@@ -1,7 +1,7 @@
-package arrays.queries;
+package arrays.prefixsum;
 
 /*
-    Technique: Prefix Sum
+    Technique: Prefix Sum, use prefix sum only when there are multiple queries
 
     below solution only works if arr[] contains only 0, as initial value
 

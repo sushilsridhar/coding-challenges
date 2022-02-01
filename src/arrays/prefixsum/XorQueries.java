@@ -1,8 +1,10 @@
-package arrays.queries;
+package arrays.prefixsum;
 
 /*
     You are given an array A (containing only 0 and 1) as element of N length.
     Given L and R, you need to determine value of XOR of all elements from L to R (both inclusive) and number of unset bits (0's) in the given range of the array.
+
+    use prefix array to solve this
 
     input:
     A=[1,0,0,0,1]

@@ -1,4 +1,4 @@
-package arrays.queries;
+package arrays.prefixsum;
 
 /*
     Technique: Prefix Sum
