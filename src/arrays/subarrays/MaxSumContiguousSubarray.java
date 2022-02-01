@@ -1,6 +1,8 @@
 package arrays.subarrays;
 
 /*
+    Technique: carry forward
+
     Find the contiguous subarray within an array, A of length N which has the largest sum.
 
      int[] A = { 1, 2, 3, 4, -10 };
@@ -8,22 +10,6 @@ package arrays.subarrays;
     The subarray [1, 2, 3, 4] has the maximum possible sum of 10.
 
     A = [-2,1,-3,4,-1, 2, 1, -5, 4]
-
-        sum[9];
-
-        sum[0]=-2  = -2
-        sum[1]=-1  = (-1)- min of all before this index(-2) = -1 -(-2)= 1
-        sum[2]=-4  = -4 -(-2) =-2
-        sum[3]=0   = 0- (-4)
-        sum[4]=-1
-        sum[5]=1
-        sum[6]=2
-        sum[6]=-3
-        sum[7]=1
-
-        sum uoto index i - minimum sum upto index i-1
-        -2 -1 -4 0 -1 1 2 -3 1
-        -2  1 -2 4  3 5 6  1 5
  */
 public class MaxSumContiguousSubarray {
 
