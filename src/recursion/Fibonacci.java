@@ -22,6 +22,11 @@ package recursion;
     t(n) = 2^3 t(n-3) + 2^3 -1
     t(n) = 2^k t(n-k) + 2^k -1 --> if k=n, t(n) = 2^n t(0) + 2^n -1
     t(n) = 2^n
+
+
+    space complexity:
+    maximum size of the stack at any point of time, O(n),
+    max height of the recursion tree
  */
 public class Fibonacci {
 

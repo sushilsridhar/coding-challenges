@@ -18,6 +18,7 @@ package recursion;
     if k = n,
 
     t(n) = n + t(0) , tc: O(n)
+    sc: O(n), where n is the given number
  */
 public class SumOfnNaturalNumbers {
 

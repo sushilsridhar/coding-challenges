@@ -11,6 +11,9 @@ package recursion;
     factorial of negative number is not defined in maths
 
     n==1, n==0 base condition wont work for negative numbers, use n>=0
+
+    tc: O(n), where n is given number
+    sc: O(n)
  */
 public class Factorial {
 

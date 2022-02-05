@@ -18,6 +18,8 @@ public class MagicNumber {
         System.out.println(solve(83557));
     }
 
+    // tc: O(n), where n is number of digits
+    // sc: O(n)
     public static int solve(int A) {
 
         while(A >= 10) {

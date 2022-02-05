@@ -18,17 +18,35 @@ public class KthSymbol {
 
     public static void main(String[] args) {
 
-        System.out.println(solve(2,2));
-
+        System.out.println(solve(4,2));
     }
 
     public static int solve(int A, int B) {
         StringBuilder builder = new StringBuilder("0");
         int iterationCount = 1;
-        StringBuilder newBuilder = symbol(builder, iterationCount, A);
+        //StringBuilder newBuilder = symbol(builder, iterationCount, A);
+
+        StringBuilder newBuilder = constructRows(builder, iterationCount, A);
+        //System.out.println(newBuilder.toString());
         return Character.getNumericValue(newBuilder.charAt(B-1));
     }
 
+    // optimized
+    private static StringBuilder constructRows(StringBuilder builder, int iteration, int totalIteration) {
+
+        if(iteration == totalIteration) {
+            return builder;
+        }
+
+        int n = builder.length();
+        for(int i=0; i<n; i++) {
+            int val = Character.getNumericValue(builder.charAt(i));
+            builder.append(val^1);
+        }
+        return constructRows(builder, iteration+1, totalIteration);
+    }
+
+    // brute force
     private static StringBuilder symbol(StringBuilder builder , int iterationCount, int totalIteration) {
 
         if(iterationCount == totalIteration) {

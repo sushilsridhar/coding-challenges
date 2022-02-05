@@ -2,6 +2,9 @@ package recursion;
 
 /*
     Given a number N, print all the numbers from 1 to N in increasing order
+
+    tc: O(n)
+    sc: O(n)
  */
 public class PrintInIncreasingOrder {
 

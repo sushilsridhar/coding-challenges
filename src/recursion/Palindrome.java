@@ -6,6 +6,9 @@ package recursion;
     MADAM
     MALAYALAM
     ABBA
+
+    tc: O(n/2), where n is number of characters
+    sc: O(n/2), where n is number of characters
  */
 public class Palindrome {
 

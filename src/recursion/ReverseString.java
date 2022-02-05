@@ -2,6 +2,9 @@ package recursion;
 
 /*
     Write a recursive function that, given a string S, prints the characters of S in reverse order.
+
+    tc: O(n), number of characters
+    sc: O(n), number of characters
  */
 public class ReverseString {
 
