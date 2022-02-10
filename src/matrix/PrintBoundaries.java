@@ -6,7 +6,7 @@ package matrix;
     edge case
     { 0 1 2 3 4 5}, for 1x6, logic will not work
 
-    if single row or single column, it will be work, print it directly
+    if single row or single column, it will not work, print it directly
  */
 public class PrintBoundaries {
 
