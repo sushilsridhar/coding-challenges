@@ -22,6 +22,7 @@ public class CountDistinct {
         System.out.println(countDistinctOptimized(a));
     }
 
+    // optimized
     private static int countDistinctOptimized(int[] a) {
 
         HashSet<Integer> set = new HashSet<>();
