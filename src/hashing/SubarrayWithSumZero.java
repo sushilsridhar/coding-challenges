@@ -56,6 +56,7 @@ import java.util.HashSet;
     1. build the prefix sum array
     2. check for duplicates in the prefix sum array
 
+    use long for overflow, while adding numbers for prefix array calculation
  */
 public class SubarrayWithSumZero {
 
@@ -66,9 +67,39 @@ public class SubarrayWithSumZero {
         System.out.println(bruteForce(a));
         System.out.println(usingPrefixSum(a));
         System.out.println("optimized: "+optimized(a));
+
+        System.out.println("best solution of all: "+ bestSolution(a));
     }
 
     // tc: O(n), sc: O(n)
+    public static int bestSolution(int[] A) {
+        HashSet<Long> set = new HashSet<>();
+
+        long prefixSumOfIminusOne = A[0]; // use long, overflow issue
+        if(prefixSumOfIminusOne == 0) {
+            return 1;
+        }
+        set.add(prefixSumOfIminusOne);
+
+        for(int i=1; i<A.length; i++) {
+            long prefixSumOfI = prefixSumOfIminusOne + A[i];
+
+            if(prefixSumOfI == 0 || A[i] == 0) {
+                return 1;
+            }
+
+            if(set.contains(prefixSumOfI)) {
+                return 1;
+            } else {
+                set.add(prefixSumOfI);
+            }
+            prefixSumOfIminusOne = prefixSumOfI;
+        }
+
+        return 0;
+    }
+
+    // tc: O(n), sc: O(n+n)
     private static boolean optimized(int[] a) {
 
         int[] pf = new int[a.length];
