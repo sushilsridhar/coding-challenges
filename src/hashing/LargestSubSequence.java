@@ -52,7 +52,7 @@ public class LargestSubSequence {
         System.out.println(bruteForce(a));
         System.out.println(bruteForce(b));
 
-        System.out.println(bruteForceOptimized(a));
+        System.out.println(bruteForceOptimized(a)); // best solution
         System.out.println(bruteForceOptimized(b));
 
     }
@@ -67,7 +67,7 @@ public class LargestSubSequence {
             if(a[i+1] - a[i] == 1) {
                 l++;
                 maxLength = Math.max(maxLength, l);
-            } else if(a[i+1] != a[i]) { // condition to skip duplicate elements
+            } else if(a[i+1] != a[i]) { // condition to break the count, automatically skips duplicate elements
                 l = 1;
             }
         }
