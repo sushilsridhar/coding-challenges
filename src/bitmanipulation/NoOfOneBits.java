@@ -28,6 +28,7 @@ public class NoOfOneBits {
                 count++;
 
             n = n>>1; // this is n = n/2, 16 8 4 2 1 -> binary place
+            // assignment of result to n above is important else n is not updated
         }
         return count;
     }

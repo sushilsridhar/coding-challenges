@@ -33,10 +33,10 @@ public class CheckiThBitSetOrNot {
     // optimized - using left shift
     private static boolean checkSetOrUnSetOptimizedLeftShift(int n, int i) {
 
-        return (n & (1 << i)) == Math.pow(2, i);
+        return (n & (1 << i)) != 0;
 
         // OR use this
-        // return (n & (1 << i)) != 0;
+        // return (n & (1 << i)) == Math.pow(2, i);
 
     }
 
