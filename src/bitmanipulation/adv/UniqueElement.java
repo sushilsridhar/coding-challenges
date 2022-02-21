@@ -23,6 +23,7 @@ package bitmanipulation.adv;
     1 0 1 1 - 11
     0 1 0 0 - 4
 
+    contribution of repeating element is even on any position
     number of set bits at position 0, 7, odd, contribution of unique number is 1
  */
 public class UniqueElement {
