@@ -24,4 +24,14 @@ public class ReverseString {
         System.out.print(str.charAt(i));
         return "";
     }
+
+    // printReverse("cool", 3)
+    private static String printReverse(String str, int n) {
+
+        if(n == 0) {
+            return str.charAt(0)+"";
+        }
+
+        return str.charAt(n) + printReverse(str, n-1);
+    }
 }
