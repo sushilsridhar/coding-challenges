@@ -10,6 +10,17 @@ package recursion;
     Sum of digits of (28) = 10
     Sum of digits of (10) = 1.
     Single digit is 1, so it's a magic number. Return 1.
+
+    efficient approach
+    The divisibility rule of 9 says that a number is divisible by 9 if the sum of its digits are also divisible by 9.
+    Therefore, if a number is divisible by 9, then, recursively, all the digit sums are also divisible by 9.
+    The final digit sum is always 9. An increase of 1 in the original number will increase the ultimate value by 1,
+    making it 10 and the ultimate sum will be 1, thus verifying that it is a magic number.
+
+    if(A%9 == 1){
+        return 1;
+    }
+    return 0;
  */
 public class MagicNumber {
 

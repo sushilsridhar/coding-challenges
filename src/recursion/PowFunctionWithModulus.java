@@ -12,7 +12,7 @@ package recursion;
     5%20 = 5, eg, +20 on top, 25%20 = 5, both are same
 
 
-    ans = (int)(((long)pow%C * pow%C)%C); , to avoid overflow
+    ans = (int)(((long)pow%C * pow%C)%C); , to avoid overflow, convert the variable to long before modulo
  */
 public class PowFunctionWithModulus {
 
