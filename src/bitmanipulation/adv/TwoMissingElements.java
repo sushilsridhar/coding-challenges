@@ -43,7 +43,7 @@ public class TwoMissingElements {
         // finding the first set bit
         int dividerBitIndex = 0;
         for(int i=0; i<32; i++) {
-            if((xorAll & 1)  == 1) {
+            if((xorAll & (1<<i))  != 0) {
                 dividerBitIndex = i;
                 break;
             }
