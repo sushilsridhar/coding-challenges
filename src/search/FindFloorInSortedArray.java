@@ -4,6 +4,10 @@ package search;
     Given a sorted array, find the floor of a given number k
     floor -> greatest number <= k
 
+    approach:
+    keep ignoring the left side, and save the element , the final element which is less than k is the answer
+    keep saving the element less than k
+
     tc: O(logn), sc: O(1)
  */
 public class FindFloorInSortedArray {
