@@ -8,6 +8,10 @@ package search;
     You may assume no duplicate exists in the array.
 
     NOTE: Users are expected to solve this in O(log(N)) time.
+
+    approach:
+    TODO
+
  */
 public class SearchInRotatedSortedArray {
 
