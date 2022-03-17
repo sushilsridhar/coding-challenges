@@ -36,6 +36,22 @@ import java.util.HashSet;
      0 index -> 6 7 8 9 10
      1 index -> 6 7 8 9 10 ...
 
+
+     time complexity: O(n+n) -> O(n)
+
+      int[] a = {-1, 8, 2, 3, 7, 1, 4, 9};
+
+           while loop execution
+      -1 -> 0
+       8 -> 0
+       2 -> 0
+       3 -> 0
+       7 -> 2 , 8 9
+       1 -> 3 , 2 3 4
+       4 -> 0
+       9 -> 0
+
+       runs only for the start of the sequence, all elements are executed only once
  */
 public class LargestSubSequence {
 
@@ -55,6 +71,27 @@ public class LargestSubSequence {
         System.out.println(bruteForceOptimized(a)); // best solution
         System.out.println(bruteForceOptimized(b));
 
+    }
+
+    // tc: O(n), how ? refers notes sc: O(n)
+    private static int bruteForceOptimized(int[] a) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<a.length; i++) {
+            set.add(a[i]);
+        }
+        int max = 1;
+        for(int i=0; i<a.length; i++) {
+            if(!set.contains(a[i]-1)) {
+                int ele = a[i]+1;
+                int l = 1;
+                while(set.contains(ele))  {
+                    ele++;
+                    l++;
+                }
+                max = Math.max(max, l);
+            }
+        }
+        return max;
     }
 
     private static int sortSolution(int[] a) {
@@ -91,27 +128,6 @@ public class LargestSubSequence {
             }
             max = Math.max(max, l);
 
-        }
-        return max;
-    }
-
-    // tc: O(n), how ? refers notes sc: O(n)
-    private static int bruteForceOptimized(int[] a) {
-        HashSet<Integer> set = new HashSet<>();
-        for(int i=0; i<a.length; i++) {
-            set.add(a[i]);
-        }
-        int max = 1;
-        for(int i=0; i<a.length; i++) {
-            if(!set.contains(a[i]-1)) {
-                int ele = a[i]+1;
-                int l = 1;
-                while(set.contains(ele))  {
-                    ele++;
-                    l++;
-                }
-                max = Math.max(max, l);
-            }
         }
         return max;
     }
