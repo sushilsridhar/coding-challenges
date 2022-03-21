@@ -16,6 +16,8 @@ package trees;
     use preorder traversal, so that if root is the key, we can return immediately without searching left and right
 
     fail fast/ success fast, returning immediately
+
+    tc: O(n)
  */
 public class SearchKeyInBinaryTree {
 
@@ -53,6 +55,9 @@ public class SearchKeyInBinaryTree {
             return true;
         }
         return searchInBinaryTree(root.right, key);
+
+        // can be written as
+        // return searchInBinaryTree(root.left, key) || searchInBinaryTree(root.right, key);
     }
 
     public static TreeNode setup() {
