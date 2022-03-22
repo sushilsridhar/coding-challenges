@@ -18,7 +18,7 @@ package trees;
 
     tc: O(n)
  */
-public class IsTwoBSTIdentical {
+public class IsTwoTreeIdentical {
 
     static class TreeNode {
         int data;
