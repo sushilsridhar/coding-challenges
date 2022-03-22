@@ -66,9 +66,6 @@ public class SearchKeyInBalancedBT {
         TreeNode six = new TreeNode(6);
 
         TreeNode seven = new TreeNode(7);
-        TreeNode eight = new TreeNode(8);
-
-        TreeNode nine = new TreeNode(9);
 
 
         root.left = three;
