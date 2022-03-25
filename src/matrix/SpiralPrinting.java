@@ -35,7 +35,7 @@ public class SpiralPrinting {
         // edge cases
     }
 
-    private static void spiral(int[][] a) {
+    public static void spiral(int[][] a) {
         int n = a.length;
         int m = a[0].length;
         int i = 0, j = 0;
