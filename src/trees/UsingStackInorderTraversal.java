@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 /*
-    Traverse the tree in pre order
+    Traverse the tree in in order
 
     tree:
                     1
@@ -13,9 +13,9 @@ import java.util.Stack;
                              7         8
                                 9
 
-    output: 1 2 3 4 5 6 7 9 8
+    output: 3 2 4 1 5 7 9 6 8
  */
-public class PreorderTraversalUsingStack {
+public class UsingStackInorderTraversal {
 
     static class TreeNode {
         int data;
@@ -31,34 +31,27 @@ public class PreorderTraversalUsingStack {
 
         TreeNode root = setup();
 
-        ArrayList<Integer> r = preorderTraversal(root);
+        ArrayList<Integer> r = inorderTraversal(root);
 
         for(int i: r) {
-            System.out.println(i);
+            System.out.print(i+" ");
         }
     }
 
-    private static ArrayList<Integer> preorderTraversal(TreeNode A) {
+    private static ArrayList<Integer> inorderTraversal(TreeNode A) {
 
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(A);
-
+        Stack<TreeNode> stack = new Stack();
         ArrayList<Integer> r = new ArrayList<>();
 
-        while (!stack.isEmpty()) {
+        while(A!= null || !stack.empty()) {
 
-            TreeNode node = stack.pop();
-
-            if (node != null) {
+            if(A != null) {
+                stack.push(A);
+                A = A.left;
+            } else {
+                TreeNode node = stack.pop();
                 r.add(node.data);
-
-                if (node.right != null) {
-                    stack.push(node.right);
-                }
-
-                if (node.left != null) {
-                    stack.push(node.left);
-                }
+                A = node.right;
             }
         }
 
