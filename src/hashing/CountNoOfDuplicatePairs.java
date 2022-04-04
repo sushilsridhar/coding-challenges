@@ -18,6 +18,8 @@ import java.util.HashMap;
 
     tc: O(n)
     sc: O(n)
+
+    TODO: use ncr2 formula
  */
 public class CountNoOfDuplicatePairs {
 
