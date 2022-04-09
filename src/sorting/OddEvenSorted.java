@@ -11,7 +11,8 @@ import java.util.ArrayList;
     1. split the array into even array and odd array
     2. merge the array, comparing the values
 
-    each array element is visited by the pointer only once
+    each array element is visited by the pointer only once,
+    we can use the input array itself for storing result instead of creating a result array
 
     tc: O(n), sc: O(n)
  */
@@ -49,7 +50,7 @@ public class OddEvenSorted {
 
         int evenIndex = 0;
         int oddIndex = 0;
-        int[] r = new int[a.length];
+        int[] r = new int[a.length]; // we can use the input array itself for storing result
         int rIndex = 0;
 
         while(evenIndex < evenCount && oddIndex < oddCount) {
