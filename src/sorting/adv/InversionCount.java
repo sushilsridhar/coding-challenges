@@ -1,4 +1,4 @@
-package sorting;
+package sorting.adv;
 
 /*
     Given an array of size n, return the inversion count of the array

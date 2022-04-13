@@ -1,4 +1,4 @@
-package sorting;
+package sorting.adv;
 
 /*
     Given an array A of size N, Groot wants you to pick 2 indices i and j such that

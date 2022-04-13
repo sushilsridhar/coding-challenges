@@ -1,4 +1,4 @@
-package sorting;
+package sorting.adv;
 
 /*
     Find the Bth smallest element in given array A .
