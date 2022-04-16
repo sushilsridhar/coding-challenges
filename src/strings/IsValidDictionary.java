@@ -7,6 +7,9 @@ package strings;
     Given an array of words A of size N written in the alien language, and the order of the alphabet denoted by string B of size 26,
     return 1 if and only if the given words are sorted lexicographically in this alien language else, return 0.
 
+    A < B < C,
+    we can say, A < C, so compare only i and i+1 words
+
     A = ["hello", "scaler", "interviewbit"]
     B = "adhbcfegskjlponmirqtxwuvzy"
 
