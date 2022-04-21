@@ -19,6 +19,10 @@ package strings;
        i and j are same, starting at index 8, this is odd length substring answer
     2. incase of even length substring answer, i starts at 8 for example, j will start at i+1, 9
 
+    note:
+    odd length palindrome, there is only one center, iterate and consider each value as center, then compare the left and right and so on.
+    even length palindrome, there are two centers, iterate and consider each value as center one and its next value as center two, keep comparing them
+
  */
 public class LargestPalindromeSubstring {
 
@@ -26,7 +30,17 @@ public class LargestPalindromeSubstring {
 
         String str = "xbdyzzydbdyzydx";
 
+        System.out.println(bruteForce(str));
         System.out.println(solution(str));
+
+
+        System.out.println("hello".substring(1, 5));
+        System.out.println("hello".substring(-1+1, 5));
+
+        /*
+            prints ello, substring method is exclusive of start index and inclusive of end index
+            also for substring method, index starts from 1 not 0
+         */
     }
 
     // Time complexity: O(n2), inner loop called for each iteration
@@ -64,4 +78,45 @@ public class LargestPalindromeSubstring {
         return j-i-1; // (a,b) -> b-a-1, count excluding a and b
     }
 
+
+    // tc: O(n^3)
+    private static String bruteForce(String A) {
+
+        int maxLen = Integer.MIN_VALUE;
+        int startIndex = 0;
+        int endIndex = 0;
+        int n = A.length();
+
+        for(int i=0; i<n; i++) {
+            for(int j=i; j<n; j++) {
+                String a = A.substring(i, j+1);
+
+                if(checkPalindrome(a)) {
+                    int len = j-i+1;
+                    if(len > maxLen) {
+                        maxLen = len;
+                        startIndex = i;
+                        endIndex = j;
+                    }
+                }
+            }
+        }
+
+        return A.substring(startIndex, endIndex+1);
+    }
+
+    private static boolean checkPalindrome(String a) {
+
+        StringBuilder builder = new StringBuilder();
+
+        for(int i=a.length()-1; i>=0; i--) {
+            builder.append(a.charAt(i));
+        }
+
+        if((builder.toString()).equals(a)) {
+            return true;
+        }
+
+        return false;
+    }
 }
