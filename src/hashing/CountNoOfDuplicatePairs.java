@@ -1,6 +1,7 @@
 package hashing;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /*
     Given an array of N elements, count the number of duplicate pairs
@@ -14,12 +15,18 @@ import java.util.HashMap;
 
     ans -> 8 pairs
 
-    approach: use frequency map
+    approach: use frequency map and ncr2 formula
+
+    if there are total of 4 1's, selecting a pair means, selecting 2 elements,
+    selecting 2 items out of 4 is 4C2,
+
+    we can't use ncr for n = 1, for formula when r = 2 is,
+
+    (n * (n-1))/2 -> NC2
 
     tc: O(n)
     sc: O(n)
 
-    TODO: use ncr2 formula
  */
 public class CountNoOfDuplicatePairs {
 
@@ -29,6 +36,32 @@ public class CountNoOfDuplicatePairs {
         int a[] = {1, 2, 1, 4, 1, 2, 3, 4, 1, 6};
 
         System.out.println(countDuplicatePairs(a));
+        System.out.println(countDuplicatePairsUsingNCR(a));
+    }
+
+    //  tc: O(n)
+    //  sc: O(n)
+    private static int countDuplicatePairsUsingNCR(int[] a) {
+
+        HashMap<Integer, Integer> freqMap = new HashMap<>();
+
+        for(int i: a) {
+            if(freqMap.containsKey(i)) {
+                freqMap.put(i, freqMap.get(i) + 1);
+            } else {
+                freqMap.put(i, 1);
+            }
+        }
+
+        int sum = 0;
+
+        for(Map.Entry<Integer, Integer> entry: freqMap.entrySet()) {
+            int n = entry.getValue();
+            int nCR = (n * (n-1))/2;
+            sum = sum + nCR;
+        }
+
+        return sum;
     }
 
     private static int countDuplicatePairs(int[] a) {
