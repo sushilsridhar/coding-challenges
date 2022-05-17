@@ -23,7 +23,7 @@ package maths.primenumbers;
     tc(sum of reciprocal all prime numbers from 1 to n) < log n
 
     tc: upper bound -> O(n * logn)
-
+    sc: O(n+1)
  */
 public class PrintAllPrime {
 
