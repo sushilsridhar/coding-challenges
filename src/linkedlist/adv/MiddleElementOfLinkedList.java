@@ -1,98 +1,70 @@
 package linkedlist.adv;
 
 /*
-    Given a singly linked list, delete middle of the linked list.
-    For example, if given linked list is 1->2->3->4->5 then linked list should be modified to 1->2->4->5
+    Given a linked list of integers, find and return the middle element of the linked list.
+    NOTE: If there are N nodes in the linked list and N is even then return the (N/2 + 1)th element.
 
-    If there are even nodes, then there would be two middle nodes, we need to delete the second middle element.
-    For example, if given linked list is 1->2->3->4->5->6 then it should be modified to 1->2->3->5->6.
+    1 -> 2 -> 3 -> 4 -> 5,
+    middle is 3
 
-    Return the head of the linked list after removing the middle node.
-    If the input linked list has 1 node, then this node should be deleted and a null node should be returned.
+    1 -> 2 -> 3 -> 4 -> 5 -> 6,
+    middle is 4, even length list has two centers 3 and 4, return the second center
 
-    bruteforce:
-    iterate and find the size of the array and find the middle
-    iterate upto middle to delete the element
-
-    optimized: two pointer approach, slow faster pointer approach
-
+    approach: slow and fast pointer
     every iteration
     1. increment pointer1 once
     2. increment pointer2 twice,
 
     by the time pointer2 reaches end of the list, pointer1 will be in the middle
-
     tc: O(n/2)
  */
-public class DeleteMiddle {
+public class MiddleElementOfLinkedList {
 
     // tc: O(n/2)
-    public static ListNode twoPointers(ListNode A) {
+    public static int twoPointers(ListNode A) {
 
         ListNode head = A;
-
-        ListNode pointer = head;
+        ListNode pointer1 = head;
         ListNode pointer2 = head;
-        ListNode prev = null;
 
         while(pointer2.next != null && pointer2.next.next != null) {
-            prev = pointer;
-            pointer = pointer.next;
+            pointer1 = pointer1.next;
             pointer2 = pointer2.next.next;
         }
 
-        if(pointer2.next == null) {
-            if(prev == null) {
-                head = head.next;
-                return head;
-            }
-            prev.next = pointer.next;
-        } else {
-            prev = pointer;
-            pointer = pointer.next;
-
-            prev.next = pointer.next;
+        if(pointer2.next == null) { // length is odd
+            return pointer1.val;
         }
 
-        return head;
+        return pointer1.next.val; // length is even
     }
 
     // tc: O(n + n/2)
-    private static ListNode bruteForce(ListNode A) {
+    public static int bruteForce(ListNode A) {
 
         ListNode head = A;
+        ListNode pointer = head;
 
-        ListNode pointer1 = head;
         int size = 0;
 
-        while(pointer1 != null) {
+        while(pointer != null) {
+            pointer = pointer.next;
             size++;
-            pointer1 = pointer1.next;
         }
 
-        if(size == 1) {
-            A = A.next;
-            return A;
-        }
-
-        int k = (size-1)/2;
-        if((size & 1) == 0) {
-            k++;
-        }
-
-        ListNode prev = null;
+        int k = size/2 + 1;
+        int count = 1;
+        int data = 0;
         ListNode pointer2 = head;
-        int i=0;
-        while(i<k) {
-            prev = pointer2;
+
+
+        while(count <= k) {
+            data = pointer2.val;
             pointer2 = pointer2.next;
-            i++;
+            count++;
         }
 
-        prev.next = pointer2.next;
-
-
-        return head;
+        return data;
     }
 
     public static void main(String[] args) {
@@ -100,15 +72,14 @@ public class DeleteMiddle {
         ListNode head = createLinkedList();
         printLinkedList(head);
 
-        ListNode updatedList = twoPointers(head);
-        printLinkedList(updatedList);
+        int ans = twoPointers(head);
+        System.out.println(ans);
 
         ListNode head2 = createLinkedListOdd();
         printLinkedList(head2);
 
-        ListNode updatedList2 = twoPointers(head2);
-        printLinkedList(updatedList2);
-
+        int ans2 = twoPointers(head2);
+        System.out.println(ans2);
     }
 
     /* ----------------------------------------------------------------------------- */
