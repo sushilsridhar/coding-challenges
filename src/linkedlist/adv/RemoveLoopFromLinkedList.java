@@ -1,25 +1,35 @@
 package linkedlist.adv;
 
 /*
-    approach: Floyd Cycle Finding Algorithm
+    You are given a linked list that contains a loop.
+    You need to find the node, which creates a loop and break it by making the node point to NULL.
 
-    Given a ll, detect whether cycle exists
+    1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7
+                        <-- 9 <-- 8 <--
 
-    1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7 --> 8 --> 9
-                                              4 <--
+    1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7 --> 8 --> 9 --> null
 
-    using hashset,
-    store the address of ListNodes in HashSet, if there exists duplicate, cycle exists
+    approach:
 
-    using slow fast pointer,
-    if there is a cycle, these two pointers will meet some where
+    Floyd Cycle Finding Algorithm, to find if there is a loop
+
+    if there is a loop, the distance between the point where slow and fast pointer meet and the start of the loop is same as
+    the distance between the head of ll and start of the loop,
+
+    refer Floyd-cycle-detection.png
 
     tc: O(n)
     sc: O(1)
  */
-public class DetectCycle {
+public class RemoveLoopFromLinkedList {
 
-    private static boolean fastSlowPointer(ListNode head) {
+    public static ListNode removeLoop(ListNode A) {
+
+        ListNode head = A;
+
+        ListNode p1 = head;
+        ListNode p2 = null;
+        ListNode prevOfP2 = null;
 
         ListNode pointer1 = head;
         ListNode pointer2 = head;
@@ -29,18 +39,39 @@ public class DetectCycle {
             pointer2 = pointer2.next.next;
 
             if(pointer1 == pointer2) {
-                return true;
+                p2 = pointer1;
+                break;
             }
         }
 
-        return false;
+        if(p2 != null) {
+
+            while(p1 != null && p2 != null) {
+
+                if(p1 == p2) {
+                    break;
+                }
+
+                prevOfP2 = p2;
+                p1 = p1.next;
+                p2 = p2.next;
+            }
+
+            prevOfP2.next = null;
+        }
+
+
+        return head;
+
     }
 
     public static void main(String[] args) {
 
         ListNode head = createLinkedList();
+        //printLinkedList(head);
 
-        System.out.println(fastSlowPointer(head));
+        ListNode withoutLoop = removeLoop(head);
+        printLinkedList(withoutLoop);
     }
 
     /* ----------------------------------------------------------------------------- */
