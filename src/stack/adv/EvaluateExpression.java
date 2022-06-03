@@ -24,7 +24,8 @@ public class EvaluateExpression {
     public static void main(String[] args) {
 
         String[] A = {"4", "13", "5", "/", "+"};
-        System.out.println(evalRPN(A));
+        String[] B = {"2", "-", "1", "-", "2", "-"};
+        System.out.println(evalRPN(B));
     }
 
     public static int evalRPN(String[] A) {
