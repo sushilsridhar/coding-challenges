@@ -18,6 +18,11 @@ package linkedlist.adv;
 
     refer Floyd-cycle-detection.png
 
+    time complexity:
+    If there is a cycle, the fast pointer needs M times to catch up the slower pointer, where M is the length of the cycle in the list.
+    Obviously, M <= N. So we will run the loop up to N times.
+    So, the time complexity of this algorithm is O(N) in total.
+
     tc: O(n)
     sc: O(1)
  */
