@@ -1,7 +1,8 @@
 package arrays.subarrays;
 
 /*
-    technique: adding contribution of each and every element
+    technique: contribution technique
+               adding contribution of each and every element
                 0   1  2   3  4  5
     int a[] = { 3, -2, 4, -1, 2, 6};
 
