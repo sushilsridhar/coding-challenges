@@ -31,11 +31,50 @@ public class UsingStackPostorderTraversal {
 
         TreeNode root = setup();
 
+        ArrayList<Integer> list = postorderTraversalMethodTwo(root);
+        for(int i: list) {
+            System.out.print(i+" ");
+        }
+
+        System.out.println("");
+
         int[] r = postorderTraversal(root);
 
         for(int i: r) {
             System.out.print(i+" ");
         }
+    }
+
+    public static ArrayList<Integer> postorderTraversalMethodTwo(TreeNode A) {
+
+        TreeNode pointer = A;
+        Stack<TreeNode> stack = new Stack<>();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while(pointer != null || !stack.isEmpty()) {
+
+            if(pointer != null) {
+                list.add(pointer.data);
+                if(pointer.left != null) {
+                    stack.push(pointer.left);
+                }
+                pointer = pointer.right;
+            } else {
+                TreeNode node = stack.pop();
+                pointer = node;
+            }
+        }
+
+        int i = 0;
+        int j = list.size()-1;
+        while(i<j) {
+            int temp = list.get(i);
+            list.set(i, list.get(j));
+            list.set(j, temp);
+            i++;
+            j--;
+        }
+        return list;
     }
 
     private static int[] postorderTraversal(TreeNode A) {
