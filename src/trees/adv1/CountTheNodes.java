@@ -1,31 +1,36 @@
-package trees.adv;
+package trees.adv1;
 
 /*
-    You are given the root node of a binary tree A. You have to find the sum of node values of this tree.
+    You are given the root node of a binary tree A. You have to find the number of nodes in this tree.
+
+            4
+       5         2
+              3     6
+
+    count is 5
 
     tc: O(n)
-    sc: O(h), height of binary tree
+    sc: O(h), if skewed tree, it is O(n)
  */
-public class SumOfNodes {
+public class CountTheNodes {
 
-    public static int sum(TreeNode A) {
+    private static int solve(TreeNode A) {
 
         if(A == null) {
             return 0;
         }
 
-        return sum(A.left) + sum(A.right) + A.data;
+        return solve(A.left) + solve(A.right) + 1;
     }
 
     public static void main(String[] args) {
         TreeNode root = setup();
 
-        System.out.println(sum(root));
+        System.out.println(solve(root));
     }
 
     /* ----------------------------------------------------------------------------- */
     /* ------------------------------------ HELPER --------------------------------- */
-
     static class TreeNode {
         int data;
         TreeNode left;

@@ -16,7 +16,7 @@ package trees;
 
     tc: O(n), n is the total number of nodes
  */
-public class CountingTheNodes {
+public class CountingTheGreaterNodes {
 
     static class TreeNode {
         int data;

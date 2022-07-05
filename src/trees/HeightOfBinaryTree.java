@@ -22,6 +22,9 @@ package trees;
      h2 - height of right sub tree
 
      r = max(h1, h2) + 1, plus one is for root element
+
+     tc: O(n), visiting all nodes to calculate max height
+     sc: O(h), max call stack at point of time
  */
 public class HeightOfBinaryTree {
 
