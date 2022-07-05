@@ -1,45 +1,55 @@
 package trees.adv2;
 
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 /*
-    Given a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    Given a binary tree of integers denoted by root A. Return an array of integers representing the right view of the Binary tree.
+    Right view of a Binary Tree is a set of nodes visible when the tree is visited from Right side.
+
             4
        5         2
-    1         3     6
+    1         3
 
-    4 5 2 1 3 6 - level order traversal
+    4 2 3 - right view
 
     tc: O(n)
     sc: O(n), at the last level, the last level contains rougly n/2 elements, so it is O(n)
- */
-public class LevelOrderTraversal {
 
-    private static ArrayList<ArrayList<Integer>> levelOrder(TreeNode A) {
+    approach:
+
+    use the same code as left view,
+    but push the right side in the queue first then the left side
+ */
+public class RightViewOfBinaryTree {
+
+    private static ArrayList<Integer> rightView(TreeNode A) {
         TreeNode root = A;
 
-        ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> list = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()) {
-            ArrayList<Integer> levelOrderList = new ArrayList<>();
             int size = queue.size();
+            int count = 0;
 
-            while(size > 0) {
+            while(count < size) {
                 TreeNode node = queue.poll();
-                levelOrderList.add(node.data);
+
+                if(count == size-1) {
+                    list.add(node.val);
+                }
 
                 if(node.left != null)
                     queue.add(node.left);
                 if(node.right != null)
                     queue.add(node.right);
-                size--;
-            }
 
-            list.add(levelOrderList);
+                count++;
+            }
         }
 
         return list;
@@ -48,26 +58,21 @@ public class LevelOrderTraversal {
     public static void main(String[] args) {
         TreeNode root = setup();
 
-        ArrayList<ArrayList<Integer>> list = levelOrder(root);
-
-        for(ArrayList<Integer> l: list) {
-            for (int i: l) {
-                System.out.print(i+" ");
-            }
-            System.out.println("");
+        ArrayList<Integer> list = rightView(root);
+        for (int i: list) {
+            System.out.print(i+" ");
         }
-
     }
 
     /* ----------------------------------------------------------------------------- */
     /* ------------------------------------ HELPER --------------------------------- */
     static class TreeNode {
-        int data;
+        int val;
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int data) {
-            this.data = data;
+        TreeNode(int val) {
+            this.val = val;
         }
     }
 
@@ -86,7 +91,6 @@ public class LevelOrderTraversal {
         five.left = one;
 
         two.left = three;
-        two.right = six;
 
         return root;
     }
