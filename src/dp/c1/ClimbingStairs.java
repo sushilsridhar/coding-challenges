@@ -22,6 +22,8 @@ package dp.c1;
     observations,
     optimal sub problems
 
+    total number of unique state is n, time taken for one state is O(1)
+
     tc: O(n)
     sc: O(n)
  */
