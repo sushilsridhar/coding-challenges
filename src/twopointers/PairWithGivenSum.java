@@ -9,7 +9,11 @@ package twopointers;
     increase i, sum increase
     decrease j, sum decrease
 
+    approach:
+    one pointer at the start and one pointer at end
+
     tc: O(n)
+    sc: O(1)
  */
 public class PairWithGivenSum {
 

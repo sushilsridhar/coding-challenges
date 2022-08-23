@@ -15,6 +15,9 @@ package twopointers;
     increase i, difference decrease -
                                        increase j, difference increase
 
+    approach:
+    two pointers are the start
+
     tc: O(n)
     sc: O(1)
  */

@@ -14,6 +14,13 @@ import java.util.Arrays;
 
     two pointers ->   a[i] + a[j]  = x - a[k] , fix k,
     a[i] + a[j]  = updatedSum, using two pointer find given sum approach
+
+    approach:
+    fix one element and using two pointers for finding the other two,
+    one pointer at the start and another pointer at end
+
+    tc: O(n^2), for each element do two pointers (n * n)
+    sc: O(1)
  */
 public class FindTriplet {
 
