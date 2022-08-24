@@ -2,8 +2,49 @@ package twopointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
+/*
+    TODO
+ */
 public class ThreeSumZero {
+
+    public ArrayList<ArrayList<Integer>> threeSum1(ArrayList<Integer> A) {
+
+        ArrayList<ArrayList<Integer>> ansList = new ArrayList<>();
+
+        Collections.sort(A);
+
+        ArrayList<Integer> container = new ArrayList<>();
+
+        recursion(ansList, container, A, 0, 0);
+
+        return ansList;
+    }
+
+    private void recursion(ArrayList<ArrayList<Integer>> ansList, ArrayList<Integer> container, ArrayList<Integer> A, int startIndex,
+                           int sum) {
+
+        if(container.size() == 3) {
+            if(sum == 0) {
+                ArrayList<Integer> ans = new ArrayList<>();
+                for(int ele: container) {
+                    ans.add(ele);
+                }
+                ansList.add(ans);
+            }
+            return;
+        }
+
+        for(int i=startIndex; i<A.size(); i++) {
+            container.add(A.get(i));
+            sum = sum + A.get(i);
+            recursion(ansList, container, A, i+1, sum);
+            container.remove(container.size()-1);
+            sum = sum - A.get(i);
+        }
+
+    }
 
     public static void main(String[] args) {
 

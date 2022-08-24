@@ -17,26 +17,14 @@ import java.util.HashMap;
  */
 public class PairWithGivenSumCount {
 
-    private static int usingMap(int[] A, int B) {
+    public static void main(String[] args) {
+        //          0   1   2    3    4
+        int a[] = { 5, 10, 20, 100, 105}; // ans -> 2
+        int k = 110;
 
-        int count = 0;
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i=0; i<A.length; i++) {
-            if(map.containsKey(A[i])) {
-                map.put(A[i], map.get(A[i])+1);
-            } else {
-                map.put(A[i], 1);
-            }
-        }
+        System.out.println(twoPointers(a, k));
+        System.out.println(usingMap(a, k));
 
-        for(int i=0; i<A.length; i++) {
-            int x = B - A[i];
-            if(map.containsKey(x)) {
-                count = count + map.get(x);
-            }
-        }
-
-        return count/2; // pairs get counted twice, so divide by 2
     }
 
     private static int twoPointers(int[] A, int B) {
@@ -60,5 +48,27 @@ public class PairWithGivenSumCount {
         }
 
         return count;
+    }
+
+    private static int usingMap(int[] A, int B) {
+
+        int count = 0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0; i<A.length; i++) {
+            if(map.containsKey(A[i])) {
+                map.put(A[i], map.get(A[i])+1);
+            } else {
+                map.put(A[i], 1);
+            }
+        }
+
+        for(int i=0; i<A.length; i++) {
+            int x = B - A[i];
+            if(map.containsKey(x)) {
+                count = count + map.get(x);
+            }
+        }
+
+        return count/2; // pairs get counted twice, so divide by 2
     }
 }
