@@ -22,7 +22,7 @@ import java.util.Arrays;
     tc: O(n^2), for each element do two pointers (n * n)
     sc: O(1)
  */
-public class FindTriplet {
+public class ThreeSum {
 
     public static void main(String[] args) {
                 // 0  1  2   3   4   5
