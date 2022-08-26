@@ -26,7 +26,13 @@ import java.util.Collections;
 
     two pointers,
 
-    TODO
+    sort the array, so that we can apply two pointers,
+    if sum = 0, note the ans and use while loops to avoid duplicates,
+
+    sum > 0, reduce the sum, else increase the sum
+
+    tc: O(nlogn + n^2)
+    sc: O(1)
 
  */
 public class ThreeSumZero {

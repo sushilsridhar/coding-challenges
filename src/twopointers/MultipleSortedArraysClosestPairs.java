@@ -3,7 +3,7 @@ package twopointers;
 /*
     TODO
  */
-public class ClosestPairsInSortedArrays {
+public class MultipleSortedArraysClosestPairs {
 
     public int[] solve(int[] A, int[] B, int C) {
 
