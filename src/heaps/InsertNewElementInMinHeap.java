@@ -3,7 +3,7 @@ package heaps;
 import java.util.ArrayList;
 
 /*
-    Print inorder traversal of heap
+    Insert new element into min heap
 
     0  1  2    3   4    5    6    7    8   9
     1, 8 ,7, 102, 50, 100, 105, 104, 220, 65
@@ -15,6 +15,7 @@ import java.util.ArrayList;
      104   220     65
 
     approach:
+    add 10 to min heap,
 
     add new ele to the last index, compare it with it's parent,
     if ele is less than parent, swap parent and ele
@@ -22,6 +23,9 @@ import java.util.ArrayList;
     1 8 7 102 10 100 105 104 220 65 50
 
     tc: O(h), worst case, the added element can move up to the root
+    height of the complete binary tree is O(logn)
+
+    tc: O(logn)
     sc: O(1)
  */
 public class InsertNewElementInMinHeap {

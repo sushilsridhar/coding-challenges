@@ -1,7 +1,7 @@
 package heaps;
 
 /*
-    Print inorder traversal of heap
+    check if heap is min heap
 
      0   1   2   3   4   5
     10, 18, 20, 80, 90, 20
