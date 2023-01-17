@@ -1,4 +1,4 @@
-package arrays.printpatterns;
+package printpatterns;
 
 /*
     [  [0, 0, 0, 1]
