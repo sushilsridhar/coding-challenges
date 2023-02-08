@@ -1,7 +1,8 @@
 package arrays.numbers;
 
 /*
-    You are given an array of distinct integers A, you have to find and return the count of elements in array which have at-least one greater element than itself.
+    You are given an array of distinct integers A, you have to find and return the count of elements in array
+    which have at-least one greater element than itself
 
     O(n)
  */
