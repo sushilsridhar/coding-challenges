@@ -5,6 +5,8 @@ package arrays.prefixsum;
 
     below solution only works if arr[] contains only 0, as initial value
 
+    incase if initial array contains non-zero elements, work with arr[] with 0 as elements, and finally add the original array elements to this
+
     step1: For all queries, update arr[], update the value at start index and value at endIndex+1
 
            L R   X
@@ -15,6 +17,13 @@ package arrays.prefixsum;
            6-9  -3  --> arr[6]+= -3, arr[10] is not present so ignore
 
            new arr[] --> { 0, -4, 3, 2, 0, 5, -6, 0, -2, -1};
+
+
+           2-5, add 3
+                                0 1 2 3 4 5  6  7  8
+           initial array is     0 0 0 0 0 0  0  0  0
+           add arr[2] = 3           3 3 3 3  3  3  3 -> if you take prefix sum
+           add arr[5+1] = -3                -3 -3 -3  -> if you take prefix sum
 
      step2: calculate prefix array for the new array
 
@@ -42,6 +51,8 @@ public class AddXFromLeftToRightQueries {
 
     }
 
+    // time complexity: O(n+q), q - number of queries, n - calculate prefix array
+    // space complexity: O(1), since the same array is used
     private static int[] exampleBestSolution(int A, int[][] B) {
         int[] a = new int[A];
         int[] pf = new int[A];
@@ -65,6 +76,8 @@ public class AddXFromLeftToRightQueries {
         return pf;
     }
 
+    // time complexity: O(q*n), q - number of queries, n , qEnd-qstart-1, worst case qstart=0,
+    // qEnd=n, --> n-1, space complexity: O(1)
     private static int[] exampleBruteForce(int A, int[][] B) {
 
         int[] a = new int[A];
